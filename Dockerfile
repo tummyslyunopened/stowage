@@ -7,7 +7,7 @@ COPY src/ ./src/
 RUN touch src/main.rs && \
     cargo build --release && \
     cp target/release/stowage .
-FROM debian:bullseye-slim
+FROM debian:bullseye
 RUN apt-get update && \
     apt-get install -y --no-install-recommends openssl ca-certificates && \
     rm -rf /var/lib/apt/lists/*
