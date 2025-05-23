@@ -1,39 +1,9 @@
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 use actix_web::{test, App}; 
 use std::fs; 
 use std::path::PathBuf; 
 use stowage::AppState; 
 
-
 fn build_multipart_body(field_name: &str, file_name: &str, file_bytes: &[u8], boundary: &str) -> Vec<u8> {
-    
-    
-    
-    
-    
     let mut body = Vec::new(); 
     use std::io::Write; 
     write!(
@@ -48,8 +18,6 @@ fn build_multipart_body(field_name: &str, file_name: &str, file_bytes: &[u8], bo
 
 
 async fn upload_and_download(file_name: &str, should_succeed: bool) {
-    
-    
     let media_path = tempfile::tempdir().unwrap(); 
     let app = test::init_service(
         App::new()
