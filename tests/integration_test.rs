@@ -62,9 +62,6 @@ fn init_test_logger() {
     let _ = env_logger::builder().is_test(true).try_init(); 
 }
 
-
-
-
 #[actix_web::test]
 async fn test_upload_and_download_json() {
     init_test_logger();
