@@ -13,7 +13,6 @@ A high-performance file server for audio, video, images, RSS, and JSON files, bu
   - RSS/XML feeds
   - JSON files
 - Built with Docker for easy deployment
-- CORS support
 - File type validation
 - Configurable file size limits
 
