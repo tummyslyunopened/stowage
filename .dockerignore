@@ -1,6 +1,6 @@
 # Ignore build output
+# Ignore build output
 /target
-.data/
 # Ignore local config and environment files
 *.env
 *.local
