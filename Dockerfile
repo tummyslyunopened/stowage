@@ -4,6 +4,8 @@ RUN USER=root cargo init --bin .
 COPY Cargo.toml Cargo.lock ./
 RUN cargo build --release
 COPY src/ ./src/
+COPY tests/ ./tests/
+COPY .data/ ./.data/
 RUN touch src/main.rs && \
     cargo build --release && \
     cp target/release/stowage .
@@ -15,7 +17,7 @@ WORKDIR /app
 COPY --from=builder /usr/src/stowage/stowage .
 RUN mkdir -p /app/media
 ENV RUST_LOG=info
-ENV MEDIA_PATH=/app/media
+ENV MEDIA_PATH=${MEDIA_PATH:-/app/media}
 ENV HOST=0.0.0.0
 ENV PORT=8080
 EXPOSE 8080

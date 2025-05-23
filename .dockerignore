@@ -1,0 +1,31 @@
+# Ignore build output
+/target
+
+# Ignore local config and environment files
+*.env
+*.local
+
+# Ignore VCS
+.git
+.gitignore
+
+# Ignore editor/project files
+*.swp
+*.swo
+*.bak
+*.tmp
+*.vscode/
+.idea/
+.DS_Store
+
+# Ignore test scripts and PowerShell files not needed in image
+test_stowage.ps1
+
+# Ignore media directory (not needed in image)
+media/
+
+# Ignore other unnecessary files
+flake.lock
+flake.nix
+openapi.yaml
+README.md
