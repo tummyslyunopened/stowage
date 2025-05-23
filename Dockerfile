@@ -2,12 +2,8 @@ FROM rust:latest AS builder
 WORKDIR /usr/src/stowage
 RUN USER=root cargo init --bin .
 COPY Cargo.toml Cargo.lock ./
-RUN cargo build --release
-COPY src/ ./src/
-COPY tests/ ./tests/
-COPY .data/ ./.data/
-RUN cargo test --release && \
-    cp target/release/stowage .
+RUN cargo test --release
+COPY target/release/stowage .
 FROM debian:bullseye
 RUN apt-get update && \
     apt-get install -y --no-install-recommends openssl ca-certificates && \
