@@ -1,0 +1,75 @@
+openapi: 3.0.3
+info:
+  title: Stowage File Server API
+  version: 1.0.0
+  description: |
+    A high-performance file server for audio, video, images, RSS, and JSON files, built with Rust and Actix-web.
+    
+    ## Features
+    - RESTful API for file uploads
+    - Unique, non-sequential file IDs
+    - Optimized for audio, video, images, RSS/XML, JSON
+    - File type validation (content-based)
+    - Configurable file size limits
+    - CORS support
+    - Docker-ready
+servers:
+  - url: http://localhost:8080
+paths:
+  /upload:
+    post:
+      summary: Upload a file
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:
+              type: object
+              properties:
+                file:
+                  type: string
+                  format: binary
+      responses:
+        '201':
+          description: File uploaded successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  file_id:
+                    type: string
+                  download_url:
+                    type: string
+        '400':
+          description: Invalid file type or upload error
+  /files/{file_id}:
+    get:
+      summary: Download a file
+      parameters:
+        - in: path
+          name: file_id
+          required: true
+          schema:
+            type: string
+      responses:
+        '200':
+          description: File download
+          content:
+            application/octet-stream:
+              schema:
+                type: string
+                format: binary
+        '404':
+          description: File not found
+  /about:
+    get:
+      summary: About the application
+      responses:
+        '200':
+          description: Application description
+          content:
+            text/plain:
+              schema:
+                type: string
+components: {}
