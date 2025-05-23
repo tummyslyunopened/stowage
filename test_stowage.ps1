@@ -6,7 +6,7 @@ $attempt = 0
 while ($attempt -lt $maxAttempts) {
     Start-Sleep -Seconds 1
     try {
-        $resp = Invoke-WebRequest -Uri http://localhost:8080/about -UseBasicParsing -ErrorAction Stop
+        $resp = Invoke-WebRequest -Uri http://stowage.2wu.me/about -UseBasicParsing -ErrorAction Stop
         if ($resp.StatusCode -eq 200) {
             Write-Host "Server is up!"
             break
@@ -47,7 +47,7 @@ $datadir = Join-Path $PSScriptRoot '.\.data'
 foreach ($file in $files) {
     $path = Join-Path $datadir $file
     Write-Host "Uploading $file..."
-    $resp = curl.exe -s -w "`n%{http_code}" -F "file=@$path" http://localhost:8080/upload
+    $resp = curl.exe -s -w "`n%{http_code}" -F "file=@$path" http://stowage.2wu.me/upload
     $lines = $resp -split "`n"
     $body = $lines[0]
     $status = $lines[1]
@@ -56,7 +56,8 @@ foreach ($file in $files) {
             Write-Host "  Success: $file uploaded."
             $json = $body | ConvertFrom-Json
             $file_id = $json.file_id
-            $download_url = "http://localhost:8080/files/$file_id"
+            write-host "  File ID: $file_id"
+            $download_url = "http://stowage.2wu.me/files/$file_id"
             $tempDownload = [System.IO.Path]::GetTempFileName()
             $download_status = curl.exe -s -w "%{http_code}" -o $tempDownload $download_url
             if ($download_status -eq '200') {
@@ -73,7 +74,7 @@ foreach ($file in $files) {
             }
             Remove-Item $tempDownload -ErrorAction SilentlyContinue
         } else {
-            Write-Host "  ERROR: $file should upload (got status $status)"
+            Write-Host "  ERROR: $file shoud upload (got status $status)"
         }
     } else {
         if ($status -eq '400') {
@@ -84,7 +85,7 @@ foreach ($file in $files) {
     }
 }
 Write-Host "\nTesting /about endpoint..."
-$about = Invoke-WebRequest -Uri http://localhost:8080/about -UseBasicParsing
+$about = Invoke-WebRequest -Uri http://stowage.2wu.me/about -UseBasicParsing
 Write-Host $about.Content
 Write-Host "Stopping Stowage server..."
 Stop-Process -Id $server.Id
