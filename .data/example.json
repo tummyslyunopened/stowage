@@ -1,0 +1,2111 @@
+{
+    "language": "en",
+    "segments": [
+        {
+            "end": 8.92,
+            "start": 0.0,
+            "text": " Welcome to the Making Sense Podcast."
+        },
+        {
+            "end": 10.120000000000001,
+            "start": 8.92,
+            "text": " This is Sam Harris."
+        },
+        {
+            "end": 14.08,
+            "start": 10.120000000000001,
+            "text": " Just a note to say that if you're hearing this, you're not currently on our subscriber"
+        },
+        {
+            "end": 18.0,
+            "start": 14.08,
+            "text": " feed and will only be hearing the first part of this conversation."
+        },
+        {
+            "end": 22.080000000000002,
+            "start": 18.0,
+            "text": " In order to access full episodes of the Making Sense Podcast, you'll need to subscribe"
+        },
+        {
+            "end": 24.080000000000002,
+            "start": 22.080000000000002,
+            "text": " at samherris.org."
+        },
+        {
+            "end": 27.68,
+            "start": 24.080000000000002,
+            "text": " There you'll also find our scholarship program where we offer free accounts to anyone"
+        },
+        {
+            "end": 29.0,
+            "start": 27.68,
+            "text": " of Can't afford one."
+        },
+        {
+            "end": 32.88,
+            "start": 29.0,
+            "text": " We don't run ads on the podcast, and therefore it's made possible entirely to the support"
+        },
+        {
+            "end": 33.88,
+            "start": 32.88,
+            "text": " of our subscribers."
+        },
+        {
+            "end": 45.64,
+            "start": 33.88,
+            "text": " So if you enjoy what we're doing here, please consider becoming one."
+        },
+        {
+            "end": 47.760000000000005,
+            "start": 45.64,
+            "text": " I am here with Rutger Breggman."
+        },
+        {
+            "end": 49.28,
+            "start": 47.760000000000005,
+            "text": " Rutger, thanks for going to me."
+        },
+        {
+            "end": 50.28,
+            "start": 49.28,
+            "text": " Thanks for having me, Sam."
+        },
+        {
+            "end": 52.28,
+            "start": 50.28,
+            "text": " Yes, nice to finally connect with you."
+        },
+        {
+            "end": 56.879999999999995,
+            "start": 52.28,
+            "text": " I've been seeing your stuff for a while and just read your book, your newest book, which"
+        },
+        {
+            "end": 62.6,
+            "start": 56.88,
+            "text": " is Moral Ambition, which is a little bit of a departure in tone, but you've also written"
+        },
+        {
+            "end": 66.16,
+            "start": 62.6,
+            "text": " Utopia for realists and human kinds."
+        },
+        {
+            "end": 68.88,
+            "start": 66.16,
+            "text": " This is much more of a call that I actually want to talk about."
+        },
+        {
+            "end": 74.32000000000001,
+            "start": 68.88,
+            "text": " The call, you've also started the School for Moral Ambition, which I want to talk about."
+        },
+        {
+            "end": 81.12,
+            "start": 74.32000000000001,
+            "text": " But before we jump into the book, how would you summarize your focus as a historian and"
+        },
+        {
+            "end": 85.56,
+            "start": 81.12,
+            "text": " just as someone who comes to all these topics we're going to talk about?"
+        },
+        {
+            "end": 88.24000000000001,
+            "start": 85.56,
+            "text": " So my whole career I've been fascinated by history."
+        },
+        {
+            "end": 93.84,
+            "start": 88.24000000000001,
+            "text": " I studied history at Utrecht University in the Netherlands, and initially I was a bit frustrated"
+        },
+        {
+            "end": 94.84,
+            "start": 93.84,
+            "text": " by academia."
+        },
+        {
+            "end": 97.16,
+            "start": 94.84,
+            "text": " It seemed so insulated."
+        },
+        {
+            "end": 102.4,
+            "start": 97.16,
+            "text": " I had this dream once of becoming a professor, and then maybe when I was 50 or 60 I would"
+        },
+        {
+            "end": 106.56,
+            "start": 102.4,
+            "text": " finally be allowed to write about the big interesting questions of history like why have"
+        },
+        {
+            "end": 112.32000000000001,
+            "start": 106.56,
+            "text": " we conquered the globe, why did the Industrial Revolution start in England, in the West,"
+        },
+        {
+            "end": 114.84,
+            "start": 112.32000000000001,
+            "text": " why not in India or China for example?"
+        },
+        {
+            "end": 117.0,
+            "start": 114.84,
+            "text": " Those were kind of books that I really loved."
+        },
+        {
+            "end": 120.48,
+            "start": 117.0,
+            "text": " Jared Diamond for example, Gernst Gernstierms' Seal."
+        },
+        {
+            "end": 128.48000000000002,
+            "start": 120.48,
+            "text": " But it started to dawn on me that I would probably have to specialize first and spend"
+        },
+        {
+            "end": 132.0,
+            "start": 128.48000000000002,
+            "text": " four years of my life writing a PhD, which on the one hand seemed really interesting."
+        },
+        {
+            "end": 136.48000000000002,
+            "start": 132.0,
+            "text": " But on the other hand, I looked at all the PhDs that had recently been published at Utrecht"
+        },
+        {
+            "end": 139.36,
+            "start": 136.48000000000002,
+            "text": " University, and I found all of them really boring."
+        },
+        {
+            "end": 142.16,
+            "start": 139.36,
+            "text": " So I thought, you know what, let's go into journalism."
+        },
+        {
+            "end": 145.48,
+            "start": 142.16,
+            "text": " But then I found that to be quite frustrating as well."
+        },
+        {
+            "end": 150.48,
+            "start": 145.48,
+            "text": " You know, the relentless focus on breaking news on what happens today instead of what"
+        },
+        {
+            "end": 152.16,
+            "start": 150.48,
+            "text": " happens every day."
+        },
+        {
+            "end": 154.96,
+            "start": 152.16,
+            "text": " And then when I was 25, I got my lucky break."
+        },
+        {
+            "end": 160.16,
+            "start": 154.96,
+            "text": " It was a new journalism platform that was founded in the Netherlands called the Correspondent."
+        },
+        {
+            "end": 164.6,
+            "start": 160.16,
+            "text": " And these guys, the founders, had a bit of a different news philosophy."
+        },
+        {
+            "end": 166.68,
+            "start": 164.6,
+            "text": " They wanted to unbreak the news."
+        },
+        {
+            "end": 171.24,
+            "start": 166.68,
+            "text": " And they said, Roegger, you can come and work here and write about whatever you want."
+        },
+        {
+            "end": 176.52,
+            "start": 171.24,
+            "text": " And focus more on the structural forces that, you know, govern our society."
+        },
+        {
+            "end": 179.92000000000002,
+            "start": 176.52,
+            "text": " So finally, I could write about all kinds of hobbies of mind."
+        },
+        {
+            "end": 181.36,
+            "start": 179.92000000000002,
+            "text": " For example, universal basic income."
+        },
+        {
+            "end": 183.52,
+            "start": 181.36,
+            "text": " That was something that had long fascinated me."
+        },
+        {
+            "end": 188.48000000000002,
+            "start": 183.52,
+            "text": " It seemed to me a really exciting idea that moves beyond the traditional political divide"
+        },
+        {
+            "end": 190.24,
+            "start": 188.48000000000002,
+            "text": " of the left versus the right."
+        },
+        {
+            "end": 192.28,
+            "start": 190.24,
+            "text": " So as I said, that was my lucky break."
+        },
+        {
+            "end": 193.56,
+            "start": 192.28,
+            "text": " That's how I got started."
+        },
+        {
+            "end": 198.48000000000002,
+            "start": 193.56,
+            "text": " And ever since then, the Correspondent was my platform, my little laboratory where I could"
+        },
+        {
+            "end": 200.92000000000002,
+            "start": 198.48000000000002,
+            "text": " develop my ideas."
+        },
+        {
+            "end": 205.28,
+            "start": 200.92,
+            "text": " So that's one of the benefits of not being the native speakers that you have your own"
+        },
+        {
+            "end": 208.48,
+            "start": 205.28,
+            "text": " focus group, a tiny country that no one gets a shit about."
+        },
+        {
+            "end": 212.04,
+            "start": 208.48,
+            "text": " And you can test that idea, see what works, see what doesn't."
+        },
+        {
+            "end": 215.16,
+            "start": 212.04,
+            "text": " And so that's how I've been writing my books for the past decade."
+        },
+        {
+            "end": 221.2,
+            "start": 215.16,
+            "text": " First, as essays for Dutch readers, and then, yeah, reiterating, learning, changing"
+        },
+        {
+            "end": 222.2,
+            "start": 221.2,
+            "text": " my mind."
+        },
+        {
+            "end": 224.72,
+            "start": 222.2,
+            "text": " And then at some point, you're like, yeah, this is a book."
+        },
+        {
+            "end": 225.72,
+            "start": 224.72,
+            "text": " Let's write it."
+        },
+        {
+            "end": 231.88,
+            "start": 225.72,
+            "text": " So, again, I think we're going to mostly talk about moral ambition, but big picture,"
+        },
+        {
+            "end": 236.32,
+            "start": 231.88,
+            "text": " how would you describe the state of the world from your point of view?"
+        },
+        {
+            "end": 239.56,
+            "start": 236.32,
+            "text": " I mean, there's so much is happening in American politics."
+        },
+        {
+            "end": 243.12,
+            "start": 239.56,
+            "text": " And it has so many global implications."
+        },
+        {
+            "end": 249.56,
+            "start": 243.12,
+            "text": " We've basically, to my eye, we've created an emergency for much of the world, at least"
+        },
+        {
+            "end": 250.56,
+            "start": 249.56,
+            "text": " optically."
+        },
+        {
+            "end": 252.48,
+            "start": 250.56,
+            "text": " So in a way, we've seen what's going to happen."
+        },
+        {
+            "end": 257.0,
+            "start": 252.48,
+            "text": " We probably finished this book about a year ago, I would imagine, what's your view of"
+        },
+        {
+            "end": 258.32,
+            "start": 257.0,
+            "text": " the current situation?"
+        },
+        {
+            "end": 263.8,
+            "start": 258.32,
+            "text": " So, the first line on my very first book, Utopia Freeless, was that in the past, everything"
+        },
+        {
+            "end": 264.8,
+            "start": 263.8,
+            "text": " was worse."
+        },
+        {
+            "end": 270.28,
+            "start": 264.8,
+            "text": " You know, when we zoom out, we see that we've made tremendous progress in many respects."
+        },
+        {
+            "end": 271.68,
+            "start": 270.28,
+            "text": " I mean, you know this, right?"
+        },
+        {
+            "end": 277.2,
+            "start": 271.68,
+            "text": " The mass of the client of child mortality, of extreme poverty, especially since the 1980s"
+        },
+        {
+            "end": 279.08,
+            "start": 277.2,
+            "text": " progress has been speeding up."
+        },
+        {
+            "end": 280.68,
+            "start": 279.08,
+            "text": " So that is wonderful news."
+        },
+        {
+            "end": 283.08,
+            "start": 280.68,
+            "text": " And this was more than a decade ago."
+        },
+        {
+            "end": 287.68,
+            "start": 283.08,
+            "text": " When I was a bit frustrated that it seemed we had arrived at the end of history and most"
+        },
+        {
+            "end": 292.96000000000004,
+            "start": 287.68,
+            "text": " of my friends on the political left, they mainly knew what they were against, against growth,"
+        },
+        {
+            "end": 296.2,
+            "start": 292.96000000000004,
+            "text": " against austerity, against establishment, but they didn't really know what the next"
+        },
+        {
+            "end": 297.56,
+            "start": 296.2,
+            "text": " big thing was going to be."
+        },
+        {
+            "end": 303.64,
+            "start": 297.56,
+            "text": " So in that book, I wanted to say like, come on, let's think about what could be the"
+        },
+        {
+            "end": 305.08,
+            "start": 303.64,
+            "text": " new Utopian milestone."
+        },
+        {
+            "end": 309.6,
+            "start": 305.08,
+            "text": " This is beautiful quote from Oscar Wilde, who once wrote that, you know, a map without"
+        },
+        {
+            "end": 314.16,
+            "start": 309.6,
+            "text": " Utopia on it is not worth even glancing at because it leaves out the one island where"
+        },
+        {
+            "end": 316.08000000000004,
+            "start": 314.16,
+            "text": " humanity is always landing."
+        },
+        {
+            "end": 322.16,
+            "start": 316.08000000000004,
+            "text": " Now I guess I got what I wished for, things are not boring anymore, but not really the direction"
+        },
+        {
+            "end": 324.16,
+            "start": 322.16,
+            "text": " I had hoped for, I guess."
+        },
+        {
+            "end": 329.8,
+            "start": 324.16,
+            "text": " So I've always loved this statement from Max Rosa from our Walton data, you know, the"
+        },
+        {
+            "end": 334.72,
+            "start": 329.8,
+            "text": " fantastic website that collects all the data on the state of the world, basically."
+        },
+        {
+            "end": 339.36,
+            "start": 334.72,
+            "text": " And I think it's just correct that on the one hand, yeah, the world is really bad."
+        },
+        {
+            "end": 341.84000000000003,
+            "start": 339.36,
+            "text": " We could do so much better, the world has become better."
+        },
+        {
+            "end": 342.84000000000003,
+            "start": 341.84000000000003,
+            "text": " That's all so true."
+        },
+        {
+            "end": 344.12,
+            "start": 342.84000000000003,
+            "text": " We have made progress."
+        },
+        {
+            "end": 348.40000000000003,
+            "start": 344.12,
+            "text": " And yeah, it's all that at the same time, I would say."
+        },
+        {
+            "end": 352.68,
+            "start": 348.40000000000003,
+            "text": " Just like you, I'm really, really terrified of what's going on in the United States right"
+        },
+        {
+            "end": 353.68,
+            "start": 352.68,
+            "text": " now."
+        },
+        {
+            "end": 357.12,
+            "start": 353.68,
+            "text": " Things are also happening quicker than I expected."
+        },
+        {
+            "end": 360.68,
+            "start": 357.12,
+            "text": " And yeah, it's one of the big lessons of history, right?"
+        },
+        {
+            "end": 364.8,
+            "start": 360.68,
+            "text": " There's nothing in the world by the way we structured our our society right now."
+        },
+        {
+            "end": 366.2,
+            "start": 364.8,
+            "text": " It can radically change."
+        },
+        {
+            "end": 369.88,
+            "start": 366.2,
+            "text": " And sometimes, sometimes quite quickly, both for the better and for the worse."
+        },
+        {
+            "end": 375.84,
+            "start": 369.88,
+            "text": " Yeah, well, we'll come back around to existential concerns because I think one of the ways"
+        },
+        {
+            "end": 382.64,
+            "start": 375.84,
+            "text": " in which the things are always getting better analysis has left people dissatisfied."
+        },
+        {
+            "end": 388.59999999999997,
+            "start": 382.64,
+            "text": " I'm thinking in particular, the kinds of criticism and distortion Stephen Pinker had to face"
+        },
+        {
+            "end": 391.32,
+            "start": 388.59999999999997,
+            "text": " when he released his books on this topic."
+        },
+        {
+            "end": 394.71999999999997,
+            "start": 391.32,
+            "text": " I mean, Stephen certainly was not arguing that progress is inevitable."
+        },
+        {
+            "end": 398.68,
+            "start": 394.72,
+            "text": " He was just asking us to acknowledge how like progress we've obviously made very much"
+        },
+        {
+            "end": 402.28000000000003,
+            "start": 398.68,
+            "text": " based on the kinds of data you referenced."
+        },
+        {
+            "end": 409.40000000000003,
+            "start": 402.28000000000003,
+            "text": " But many of us perceive more and more acutely how much potential energy is stored up in"
+        },
+        {
+            "end": 412.8,
+            "start": 409.40000000000003,
+            "text": " the system and how destructive it could be on so many fronts."
+        },
+        {
+            "end": 415.44000000000005,
+            "start": 412.8,
+            "text": " And AI is the latest wrinkle here."
+        },
+        {
+            "end": 421.92,
+            "start": 415.44000000000005,
+            "text": " But the idea that we could just needlessly destroy the possibility of building a something"
+        },
+        {
+            "end": 422.92,
+            "start": 421.92,
+            "text": " like a utopia."
+        },
+        {
+            "end": 427.92,
+            "start": 422.92,
+            "text": " And that's certainly seen within reach if we could just iron out our political problems."
+        },
+        {
+            "end": 428.92,
+            "start": 427.92,
+            "text": " Yeah."
+        },
+        {
+            "end": 431.24,
+            "start": 428.92,
+            "text": " And sideline a few prominent sociopaths."
+        },
+        {
+            "end": 436.56,
+            "start": 431.24,
+            "text": " But we do seem on the verge of screwing a lot of it up quite needlessly."
+        },
+        {
+            "end": 437.56,
+            "start": 436.56,
+            "text": " So we'll talk about that."
+        },
+        {
+            "end": 438.76,
+            "start": 437.56,
+            "text": " I'll come back around to that."
+        },
+        {
+            "end": 441.48,
+            "start": 438.76,
+            "text": " Yeah, I guess if I can say one thing about that."
+        },
+        {
+            "end": 445.64,
+            "start": 441.48,
+            "text": " So the shape of history is just really, really weird."
+        },
+        {
+            "end": 450.64,
+            "start": 445.64,
+            "text": " So in my new book, More on Vision, I've this one graph where I asked this simple question,"
+        },
+        {
+            "end": 454.12,
+            "start": 450.64,
+            "text": " what was the most important thing that happened in all human history here?"
+        },
+        {
+            "end": 455.84,
+            "start": 454.12,
+            "text": " And there are a couple of candidates, right?"
+        },
+        {
+            "end": 459.56,
+            "start": 455.84,
+            "text": " Maybe it was the birth of the Buddha or Jesus or Muhammad."
+        },
+        {
+            "end": 463.0,
+            "start": 459.56,
+            "text": " Maybe it was the rise and fall of the great empires, you know, the Roman Empire, the"
+        },
+        {
+            "end": 464.47999999999996,
+            "start": 463.0,
+            "text": "istic Empire."
+        },
+        {
+            "end": 466.44,
+            "start": 464.47999999999996,
+            "text": " Maybe it was the invention of the wheel."
+        },
+        {
+            "end": 467.91999999999996,
+            "start": 466.44,
+            "text": " Maybe it was the invention of the compass."
+        },
+        {
+            "end": 469.59999999999997,
+            "start": 467.91999999999996,
+            "text": " I mean, there are so many candidates."
+        },
+        {
+            "end": 475.2,
+            "start": 469.59999999999997,
+            "text": " But then you just look at some simple graphs, growth of GDP, the kind of extreme poverty,"
+        },
+        {
+            "end": 477.59999999999997,
+            "start": 475.2,
+            "text": " growth of carbon emissions."
+        },
+        {
+            "end": 479.91999999999996,
+            "start": 477.59999999999997,
+            "text": " And all these graphs have basically the same shape."
+        },
+        {
+            "end": 485.04,
+            "start": 479.92,
+            "text": " You see the hockey stick that starts in 1750 and it's a rocket that has been launched"
+        },
+        {
+            "end": 490.36,
+            "start": 485.04,
+            "text": " ever since and seems to be the case that we are, you know, looking at a movie or actually"
+        },
+        {
+            "end": 494.24,
+            "start": 490.36,
+            "text": " we're participating in a movie and we are near in the climax, you know, when the music"
+        },
+        {
+            "end": 498.0,
+            "start": 494.24,
+            "text": " is swelling and we have no idea how this is going to end."
+        },
+        {
+            "end": 503.52000000000004,
+            "start": 498.0,
+            "text": " It could be that the rocket totally crashes quite soon and that the story will be over"
+        },
+        {
+            "end": 510.76,
+            "start": 503.52,
+            "text": " quite soon or we will break out and colonize the Milky Way and maybe we will be able to"
+        },
+        {
+            "end": 512.64,
+            "start": 510.76,
+            "text": " build some kind of utopia."
+        },
+        {
+            "end": 517.4399999999999,
+            "start": 512.64,
+            "text": " And then our ancestors will look back on us and say, gosh, these people are the Asians,"
+        },
+        {
+            "end": 518.4399999999999,
+            "start": 517.4399999999999,
+            "text": " right?"
+        },
+        {
+            "end": 526.04,
+            "start": 518.4399999999999,
+            "text": " So that is so weird about being alive today is that we basically have a front row seat"
+        },
+        {
+            "end": 530.36,
+            "start": 526.04,
+            "text": " to the greatest show in all human history and we don't know how it's going to end."
+        },
+        {
+            "end": 535.92,
+            "start": 530.52,
+            "text": " Yeah, this is a point you make toward the end of the book when you point out, you know,"
+        },
+        {
+            "end": 541.44,
+            "start": 535.92,
+            "text": " quite accurately that the chronocentrism of past generations, the idea that every generation"
+        },
+        {
+            "end": 548.48,
+            "start": 541.44,
+            "text": " imagines that is living at a, especially significant time has almost always been delusional"
+        },
+        {
+            "end": 554.16,
+            "start": 548.48,
+            "text": " and yet at this moment is very hard to persuade ourselves that something isn't unique"
+        },
+        {
+            "end": 555.16,
+            "start": 554.16,
+            "text": " about this moment."
+        },
+        {
+            "end": 561.0799999999999,
+            "start": 555.16,
+            "text": " I mean, again, AI is the development of the recent years that has sharpened that up, especially,"
+        },
+        {
+            "end": 567.64,
+            "start": 561.0799999999999,
+            "text": " but even prior to that, the pace of change and the asymptotic nature of it and again,"
+        },
+        {
+            "end": 572.56,
+            "start": 567.64,
+            "text": " the reference in the graphs, you just, you cited the difference between getting things"
+        },
+        {
+            "end": 579.64,
+            "start": 572.56,
+            "text": " close to right and getting them catastrophically wrong in this generation seems especially important."
+        },
+        {
+            "end": 581.04,
+            "start": 579.64,
+            "text": " Yeah, absolutely."
+        },
+        {
+            "end": 587.28,
+            "start": 581.04,
+            "text": " I guess I find hope in the knowledge that we've been really scary times in our history"
+        },
+        {
+            "end": 592.64,
+            "start": 587.28,
+            "text": " and also really immoral times in our history when there was a countercultural revolt of elites"
+        },
+        {
+            "end": 595.76,
+            "start": 592.64,
+            "text": " against the prevailing immorality of their time."
+        },
+        {
+            "end": 600.64,
+            "start": 595.76,
+            "text": " So in the book, I write a lot about the British abolitionist, the late 80th century, who"
+        },
+        {
+            "end": 604.64,
+            "start": 600.64,
+            "text": " revolted against the elites who were in power back then."
+        },
+        {
+            "end": 612.0,
+            "start": 604.64,
+            "text": " So this was a time of huge alcholism and parliament, you know, politicians slurring their speeches."
+        },
+        {
+            "end": 615.4,
+            "start": 612.0,
+            "text": " One in five women was a prostitute in London."
+        },
+        {
+            "end": 621.28,
+            "start": 615.4,
+            "text": " You have the prince of Wales who was in an extraordinary prick even by royal standards."
+        },
+        {
+            "end": 624.84,
+            "start": 621.28,
+            "text": " And then there was a movement of people like Thomas Clarkson and William Wilberforce who"
+        },
+        {
+            "end": 628.64,
+            "start": 624.84,
+            "text": " said, we are going to make doing good, fashionable once again."
+        },
+        {
+            "end": 631.08,
+            "start": 628.64,
+            "text": " And abolitionism was just a part of that."
+        },
+        {
+            "end": 632.84,
+            "start": 631.08,
+            "text": " That was one of the main projects."
+        },
+        {
+            "end": 636.5600000000001,
+            "start": 632.84,
+            "text": " I think we've seen something similar in the United States with the move from the"
+        },
+        {
+            "end": 639.2,
+            "start": 636.5600000000001,
+            "text": " Gilbert H to the progressive era."
+        },
+        {
+            "end": 644.1600000000001,
+            "start": 639.2,
+            "text": " You know, again, the Gilbert H extraordinary inequality, these rubber barons who have made"
+        },
+        {
+            "end": 648.96,
+            "start": 644.1600000000001,
+            "text": " insane amounts of money with their monopolies in railroads, for example."
+        },
+        {
+            "end": 651.84,
+            "start": 648.96,
+            "text": " And they started spending the money in the most crazy ways."
+        },
+        {
+            "end": 657.0,
+            "start": 651.84,
+            "text": " You know, the Van der Bilz, for example, built these huge mentions on Fifth Avenue in New"
+        },
+        {
+            "end": 658.0,
+            "start": 657.0,
+            "text": " York."
+        },
+        {
+            "end": 661.76,
+            "start": 658.0,
+            "text": " There was this one mention where they recreated Venice, inside the mention with the"
+        },
+        {
+            "end": 664.28,
+            "start": 661.76,
+            "text": " canals, et cetera, really bizarre."
+        },
+        {
+            "end": 668.76,
+            "start": 664.28,
+            "text": " But then again, there was counter-cultural movement against it, of the leaves, actually,"
+        },
+        {
+            "end": 673.56,
+            "start": 668.76,
+            "text": " people like Theodore Roosevelt, the progressive president, or people like Louis Brandes, who"
+        },
+        {
+            "end": 676.88,
+            "start": 673.56,
+            "text": " became the people's lawyer and ended up on the Supreme Court."
+        },
+        {
+            "end": 683.04,
+            "start": 676.88,
+            "text": " One of my favorite persons from this era is a woman called Elva Van der Bilz, who married"
+        },
+        {
+            "end": 685.2,
+            "start": 683.04,
+            "text": " into this Van der Bilz family."
+        },
+        {
+            "end": 689.4,
+            "start": 685.2,
+            "text": " And initially, you really wanted to become part of the 400 in New York, like the richest"
+        },
+        {
+            "end": 694.84,
+            "start": 689.4,
+            "text": " 400 families in New York, who spend the most money on the most silly things."
+        },
+        {
+            "end": 697.28,
+            "start": 694.84,
+            "text": " But then, yeah, she divorced."
+        },
+        {
+            "end": 701.4,
+            "start": 697.28,
+            "text": " She had a lot of money and became a pretty radical sufferage, and at forget for women's"
+        },
+        {
+            "end": 706.0,
+            "start": 701.4,
+            "text": " rights, and donated a huge amount of money to the women's rights movement."
+        },
+        {
+            "end": 711.4399999999999,
+            "start": 706.0,
+            "text": " Almost a little bit like Mackenzie Scott is doing today, the wife of Jeff Beesos."
+        },
+        {
+            "end": 716.4399999999999,
+            "start": 711.4399999999999,
+            "text": " So I guess that's what I'm calling for in this new book, is that again, we need a counter-cultural"
+        },
+        {
+            "end": 717.4399999999999,
+            "start": 716.4399999999999,
+            "text": " movement."
+        },
+        {
+            "end": 722.5200000000001,
+            "start": 717.44,
+            "text": " And initially, now that things are getting a bit dark, and we see so many examples of"
+        },
+        {
+            "end": 726.36,
+            "start": 722.5200000000001,
+            "text": " just belated immorality in the US."
+        },
+        {
+            "end": 730.4000000000001,
+            "start": 726.36,
+            "text": " The whole Republican party is basically in a state of moral collapse."
+        },
+        {
+            "end": 736.6400000000001,
+            "start": 730.4000000000001,
+            "text": " I've got two young kids, and it's not for me, it's not really left versus right anymore."
+        },
+        {
+            "end": 738.84,
+            "start": 736.6400000000001,
+            "text": " It's when I think about how I want to raise my kids."
+        },
+        {
+            "end": 743.2,
+            "start": 738.84,
+            "text": " It's pretty much the opposite of how these people empower our behavior, like so nasty,"
+        },
+        {
+            "end": 744.9200000000001,
+            "start": 743.2,
+            "text": " basically like bullies all the time."
+        },
+        {
+            "end": 748.92,
+            "start": 745.0799999999999,
+            "text": " But as I said, we've been there before, and there have been cases in history when we"
+        },
+        {
+            "end": 749.92,
+            "start": 748.92,
+            "text": " overcame it."
+        },
+        {
+            "end": 751.88,
+            "start": 749.92,
+            "text": " I'm sure they're making America great again."
+        },
+        {
+            "end": 754.52,
+            "start": 751.88,
+            "text": " What about that project, don't you like, Rutger?"
+        },
+        {
+            "end": 762.0,
+            "start": 754.52,
+            "text": " That's, so, well, it depends on, yeah, what particular reference you have."
+        },
+        {
+            "end": 765.56,
+            "start": 762.0,
+            "text": " I mean, as you know, I'm an advocate of tax fairness."
+        },
+        {
+            "end": 772.04,
+            "start": 765.56,
+            "text": " I think it's quite unfair that billionaires around the globe have lower effective tax"
+        },
+        {
+            "end": 775.7199999999999,
+            "start": 772.04,
+            "text": " rates than working class people and middle-class people."
+        },
+        {
+            "end": 780.52,
+            "start": 775.7199999999999,
+            "text": " I think that this can be fixed, fixed, and that there are beautiful historical examples"
+        },
+        {
+            "end": 784.1999999999999,
+            "start": 780.52,
+            "text": " in history, actually, in the 1950s and the 1960s, when we had a much more reasonable"
+        },
+        {
+            "end": 788.4399999999999,
+            "start": 784.1999999999999,
+            "text": " system of taxation and actually also higher growth rates."
+        },
+        {
+            "end": 791.0,
+            "start": 788.4399999999999,
+            "text": " So yeah, make America great again."
+        },
+        {
+            "end": 792.0,
+            "start": 791.0,
+            "text": " Yeah."
+        },
+        {
+            "end": 796.9599999999999,
+            "start": 792.0,
+            "text": " I see some inspiration there in the past, definitely."
+        },
+        {
+            "end": 800.28,
+            "start": 796.9599999999999,
+            "text": " Well, let's talk about what is aspirational here."
+        },
+        {
+            "end": 804.68,
+            "start": 800.28,
+            "text": " One of the points you make in the book is that moral ambition is contagious, right?"
+        },
+        {
+            "end": 813.76,
+            "start": 804.68,
+            "text": " That this is what you want is to find a mode of life that is not just a masochistic, right,"
+        },
+        {
+            "end": 819.0799999999999,
+            "start": 813.76,
+            "text": " and merely moralistic, but you want something that is that people aspire to because it's"
+        },
+        {
+            "end": 820.4,
+            "start": 819.0799999999999,
+            "text": " just obviously good."
+        },
+        {
+            "end": 826.9599999999999,
+            "start": 820.4,
+            "text": " It seems to me that the whole point of our being here ultimately is to make life worth"
+        },
+        {
+            "end": 828.52,
+            "start": 826.96,
+            "text": " living."
+        },
+        {
+            "end": 835.08,
+            "start": 828.52,
+            "text": " And once we've done that, to continue to refine it and safeguard it and just make the possibilities"
+        },
+        {
+            "end": 839.0400000000001,
+            "start": 835.08,
+            "text": " of human happiness more and more beautiful and to spread the wealth around, obviously,"
+        },
+        {
+            "end": 840.0400000000001,
+            "start": 839.0400000000001,
+            "text": " right?"
+        },
+        {
+            "end": 845.0400000000001,
+            "start": 840.0400000000001,
+            "text": " I mean, the thing that is so excruciating is the level of inequality in our world and how"
+        },
+        {
+            "end": 851.2,
+            "start": 845.0400000000001,
+            "text": " this inequality, you know, you can, whatever delusions you take on board with respect to"
+        },
+        {
+            "end": 852.2,
+            "start": 851.2,
+            "text": " being self-made."
+        },
+        {
+            "end": 858.36,
+            "start": 852.2,
+            "text": " I mean, any, you know, any five-minute analysis of really anyone's situation reveals that"
+        },
+        {
+            "end": 859.36,
+            "start": 858.36,
+            "text": " it's at bottom."
+        },
+        {
+            "end": 861.2,
+            "start": 859.36,
+            "text": " It really is all a matter of luck."
+        },
+        {
+            "end": 867.5200000000001,
+            "start": 861.2,
+            "text": " I mean, just the people are extraordinarily lucky not to be born in some failed state where"
+        },
+        {
+            "end": 874.6400000000001,
+            "start": 867.5200000000001,
+            "text": " they have the opportunity only to get killed in an early age or spectacularly injured,"
+        },
+        {
+            "end": 879.72,
+            "start": 874.6400000000001,
+            "text": " more to die of some tropical disease that we haven't suffered in the developed world"
+        },
+        {
+            "end": 881.44,
+            "start": 879.72,
+            "text": " for quite some time."
+        },
+        {
+            "end": 887.28,
+            "start": 881.44,
+            "text": " So so much of your discussion here is focused on being motivated by these disparities to"
+        },
+        {
+            "end": 892.64,
+            "start": 887.28,
+            "text": " find them morally intolerable, very much in the spirit of, in which someone like Peter"
+        },
+        {
+            "end": 898.52,
+            "start": 892.64,
+            "text": " Singer has argued, I mean, you acknowledge in the book that you can't merely castigate"
+        },
+        {
+            "end": 904.88,
+            "start": 898.52,
+            "text": " people and demand that everyone sacrifice something aspirational about this."
+        },
+        {
+            "end": 910.72,
+            "start": 904.88,
+            "text": " And I think we need to focus on that because even some of your past pronouncements, the"
+        },
+        {
+            "end": 916.12,
+            "start": 910.72,
+            "text": " moments for which you became famous, I think the biggest one was when you were at Davos"
+        },
+        {
+            "end": 920.04,
+            "start": 916.12,
+            "text": " castigating the billionaires who are having all flown there on private jets."
+        },
+        {
+            "end": 924.72,
+            "start": 920.04,
+            "text": " I think you said that some like 1,500 private jets had flown into that meeting."
+        },
+        {
+            "end": 927.92,
+            "start": 924.72,
+            "text": " And then they cry when they see David and Bethembrose film, right?"
+        },
+        {
+            "end": 928.92,
+            "start": 927.92,
+            "text": " Right, yeah, exactly."
+        },
+        {
+            "end": 929.92,
+            "start": 928.92,
+            "text": " And funny experience."
+        },
+        {
+            "end": 930.92,
+            "start": 929.92,
+            "text": " I'm glad you had the story."
+        },
+        {
+            "end": 933.24,
+            "start": 930.92,
+            "text": " I'm sorry, I was on the menu."
+        },
+        {
+            "end": 941.7199999999999,
+            "start": 933.24,
+            "text": " But the, my concern there is that you can be read or heard as merely demonizing wealth."
+        },
+        {
+            "end": 947.52,
+            "start": 941.7199999999999,
+            "text": " In the limit, in success, what we want is the wealth to be spread around such that the"
+        },
+        {
+            "end": 953.3199999999999,
+            "start": 947.52,
+            "text": " poorest people on earth live the way the richest people do now, you know, 100 years from now."
+        },
+        {
+            "end": 954.92,
+            "start": 953.3199999999999,
+            "text": " And it's something like that."
+        },
+        {
+            "end": 959.0,
+            "start": 954.92,
+            "text": " Whatever is compatible with physics is something we want to aspire to."
+        },
+        {
+            "end": 963.48,
+            "start": 959.0,
+            "text": " Because I don't think we want to be saying at the end of the day that wealth is the problem."
+        },
+        {
+            "end": 965.12,
+            "start": 963.48,
+            "text": " Yeah, I can't agree more."
+        },
+        {
+            "end": 970.2,
+            "start": 965.12,
+            "text": " And the less to use to understand that, so social democracy, I see myself as an old-fashioned"
+        },
+        {
+            "end": 971.2,
+            "start": 970.2,
+            "text": " social Democrat."
+        },
+        {
+            "end": 974.84,
+            "start": 971.2,
+            "text": " So I think at the 60s and the 70s, the less was the party of progress."
+        },
+        {
+            "end": 978.24,
+            "start": 974.84,
+            "text": " Right, it was the party of growth, of innovation, of building."
+        },
+        {
+            "end": 985.12,
+            "start": 978.24,
+            "text": " Today, you have ideologies like degrowth, for example, that to me seem to demonize wealth"
+        },
+        {
+            "end": 986.84,
+            "start": 985.12,
+            "text": " or luxury or whatever."
+        },
+        {
+            "end": 990.0,
+            "start": 986.84,
+            "text": " And I'm like, no, like we're way too poor."
+        },
+        {
+            "end": 994.36,
+            "start": 990.0,
+            "text": " We should become much richer and then indeed, as you say, spread it around."
+        },
+        {
+            "end": 1000.32,
+            "start": 994.36,
+            "text": " The very first essay I've ever wrote was when I was 16 years old, I had this epiphany"
+        },
+        {
+            "end": 1002.48,
+            "start": 1000.32,
+            "text": " as the son of a preacher."
+        },
+        {
+            "end": 1007.12,
+            "start": 1002.48,
+            "text": " You know, I grew up in the church and you know, this is an age when you start thinking"
+        },
+        {
+            "end": 1009.0,
+            "start": 1007.12,
+            "text": " about what do I actually believe?"
+        },
+        {
+            "end": 1012.2,
+            "start": 1009.0,
+            "text": " Do I agree with all the dogmas that are served to me?"
+        },
+        {
+            "end": 1014.2800000000001,
+            "start": 1012.2,
+            "text": " And I wrote this essay about free will."
+        },
+        {
+            "end": 1017.6,
+            "start": 1014.28,
+            "text": " It came to the conclusion that, like, doesn't make sense at all."
+        },
+        {
+            "end": 1019.12,
+            "start": 1017.6,
+            "text": " Like, surely it can't exist."
+        },
+        {
+            "end": 1022.48,
+            "start": 1019.12,
+            "text": " And I guess that argument will resonate with you."
+        },
+        {
+            "end": 1027.72,
+            "start": 1022.48,
+            "text": " And I guess ever, ever from that young age, that it's also always something that has"
+        },
+        {
+            "end": 1028.72,
+            "start": 1027.72,
+            "text": " driven me."
+        },
+        {
+            "end": 1033.6,
+            "start": 1028.72,
+            "text": " Whenever we talk about inequality, I think it's especially important to zoom out, right?"
+        },
+        {
+            "end": 1038.04,
+            "start": 1033.6,
+            "text": " If you live in a rich country like I do in the Netherlands or I'm currently living in"
+        },
+        {
+            "end": 1043.2,
+            "start": 1038.04,
+            "text": " New York, you're already part of the richest 3.5 percent in the world."
+        },
+        {
+            "end": 1048.28,
+            "start": 1043.2,
+            "text": " So when we talk about inequality, we mainly have to talk about global inequality."
+        },
+        {
+            "end": 1053.1200000000001,
+            "start": 1048.28,
+            "text": " And the world needs so much more growth in that respect, right?"
+        },
+        {
+            "end": 1058.68,
+            "start": 1053.1200000000001,
+            "text": " And I'm pretty optimistic that we can make that happen."
+        },
+        {
+            "end": 1061.52,
+            "start": 1058.68,
+            "text": " And that we have already made quite a bit of progress in the last couple of decades."
+        },
+        {
+            "end": 1067.88,
+            "start": 1061.52,
+            "text": " But yeah, I can't agree more that this idea that, I don't know, it's so anti-human in"
+        },
+        {
+            "end": 1068.88,
+            "start": 1067.88,
+            "text": " a way."
+        },
+        {
+            "end": 1071.48,
+            "start": 1068.88,
+            "text": " This is quite dominant, maybe, also in environmental circles."
+        },
+        {
+            "end": 1075.72,
+            "start": 1071.48,
+            "text": " The idea that humans are a plague or something like that, that we are a virus, that we are"
+        },
+        {
+            "end": 1076.72,
+            "start": 1075.72,
+            "text": " just bad."
+        },
+        {
+            "end": 1080.5200000000002,
+            "start": 1076.72,
+            "text": " And that is just something I've always deeply, deeply disagree with."
+        },
+        {
+            "end": 1082.3600000000001,
+            "start": 1080.5200000000002,
+            "text": " Well, so let's get into the details."
+        },
+        {
+            "end": 1091.3600000000001,
+            "start": 1082.3600000000001,
+            "text": " So I suspect my tolerance for inequality is more capacious than yours, at least by"
+        },
+        {
+            "end": 1092.3600000000001,
+            "start": 1091.3600000000001,
+            "text": " tendency."
+        },
+        {
+            "end": 1098.2,
+            "start": 1092.3600000000001,
+            "text": " I mean, it's not clear to me that we, if we could spread the wealth around completely,"
+        },
+        {
+            "end": 1100.92,
+            "start": 1098.2,
+            "text": " immediately that that would be the right solution."
+        },
+        {
+            "end": 1104.68,
+            "start": 1100.92,
+            "text": " To bring, this is one of the arguments, really the only argument for open borders."
+        },
+        {
+            "end": 1109.44,
+            "start": 1104.68,
+            "text": " The idea that, you know, borders, national borders, and the inequalities they enshrine are"
+        },
+        {
+            "end": 1111.6000000000001,
+            "start": 1109.44,
+            "text": " totally unjustifiable ethically."
+        },
+        {
+            "end": 1115.32,
+            "start": 1111.6000000000001,
+            "text": " And so people should be free to move everywhere."
+        },
+        {
+            "end": 1120.4,
+            "start": 1115.32,
+            "text": " And when I look at the consequences of that, what I imagine would happen is that, okay,"
+        },
+        {
+            "end": 1124.52,
+            "start": 1120.4,
+            "text": " people would move more or less everywhere until there was no reason to move anywhere,"
+        },
+        {
+            "end": 1128.56,
+            "start": 1124.52,
+            "text": " because everywhere was just as mediocre as everywhere else."
+        },
+        {
+            "end": 1131.72,
+            "start": 1128.56,
+            "text": " And again, I come back to this notion of aspiration."
+        },
+        {
+            "end": 1138.68,
+            "start": 1131.72,
+            "text": " I do think we want societies that are wealthy enough, so as to sustain scientific advancement"
+        },
+        {
+            "end": 1141.84,
+            "start": 1138.68,
+            "text": " and artistic expression at the highest level."
+        },
+        {
+            "end": 1148.8799999999999,
+            "start": 1141.84,
+            "text": " And, you know, everything we have, we celebrate as technological and cultural success in the"
+        },
+        {
+            "end": 1153.24,
+            "start": 1148.8799999999999,
+            "text": " developed world when we're not distracting ourselves by pointless conflict."
+        },
+        {
+            "end": 1157.72,
+            "start": 1153.64,
+            "text": " So the question is, how does, if we agree that we wanted to maintain that, you know,"
+        },
+        {
+            "end": 1162.56,
+            "start": 1157.72,
+            "text": " if we want New York City to be a beautiful, high-functioning city, right?"
+        },
+        {
+            "end": 1169.48,
+            "start": 1162.56,
+            "text": " And yet, Peter Singer's analysis wouldn't allow us to prioritize anything in New York today,"
+        },
+        {
+            "end": 1175.0,
+            "start": 1169.48,
+            "text": " because life in Sub-Saharan Africa is so bad, all of those resources should obviously go there."
+        },
+        {
+            "end": 1175.92,
+            "start": 1175.0,
+            "text": " How do you swear that?"
+        },
+        {
+            "end": 1181.36,
+            "start": 1175.92,
+            "text": " How would you, I mean, if you could just start allocating funds where they should go,"
+        },
+        {
+            "end": 1185.84,
+            "start": 1181.36,
+            "text": " would you follow Peter Singer or would you have a different calculus?"
+        },
+        {
+            "end": 1186.8,
+            "start": 1185.84,
+            "text": " Quite different."
+        },
+        {
+            "end": 1189.52,
+            "start": 1186.8,
+            "text": " So on the one hand, I deeply admire the man."
+        },
+        {
+            "end": 1191.8,
+            "start": 1189.52,
+            "text": " He's one of the great philosophers of our time."
+        },
+        {
+            "end": 1197.4399999999998,
+            "start": 1191.8,
+            "text": " And there's also a lot to like about the movement that he co-founded, you know, these effective"
+        },
+        {
+            "end": 1198.4399999999998,
+            "start": 1197.4399999999998,
+            "text": " altruists."
+        },
+        {
+            "end": 1204.9199999999998,
+            "start": 1198.4399999999998,
+            "text": " They've gotten a lot of back, backfressed recently, especially hands the SBS fiasco."
+        },
+        {
+            "end": 1208.4399999999998,
+            "start": 1204.9199999999998,
+            "text": " But on the other hand, there's a lot to admire about them."
+        },
+        {
+            "end": 1213.0800000000002,
+            "start": 1208.44,
+            "text": " I guess as someone who comes from the political left, what I like most about them is their moral"
+        },
+        {
+            "end": 1214.28,
+            "start": 1213.0800000000002,
+            "text": " seriousness."
+        },
+        {
+            "end": 1217.3200000000002,
+            "start": 1214.28,
+            "text": " The willingness to actually practice what they preach."
+        },
+        {
+            "end": 1223.1200000000001,
+            "start": 1217.3200000000002,
+            "text": " So if I go to, I don't know, a conference of a bunch of leftists, I don't see a lot of"
+        },
+        {
+            "end": 1225.3600000000001,
+            "start": 1223.1200000000001,
+            "text": " people giving a lot of money away."
+        },
+        {
+            "end": 1230.4,
+            "start": 1225.3600000000001,
+            "text": " I see a lot of people talking about the need for systemic change and overthrowing the"
+        },
+        {
+            "end": 1236.72,
+            "start": 1230.4,
+            "text": " paid turkey and, you know, destroying capitalism is more whatever, but very often they don't"
+        },
+        {
+            "end": 1239.16,
+            "start": 1236.72,
+            "text": " take a lot of individual responsibility."
+        },
+        {
+            "end": 1243.4,
+            "start": 1239.16,
+            "text": " But if you go to an effective altruist conference, you will meet a lot of people who have donated"
+        },
+        {
+            "end": 1245.4,
+            "start": 1243.4,
+            "text": " kidneys to random strangers."
+        },
+        {
+            "end": 1251.4,
+            "start": 1245.4,
+            "text": " Now I still have both of my kidneys, sorry to say, but I admire it."
+        },
+        {
+            "end": 1256.6000000000001,
+            "start": 1251.4,
+            "text": " But I admire the people who do that and who give a really substantial part of their income"
+        },
+        {
+            "end": 1258.0,
+            "start": 1256.6000000000001,
+            "text": " to high-effective charities."
+        },
+        {
+            "end": 1261.28,
+            "start": 1258.0,
+            "text": " I think just like you, I became a member of giving what we can."
+        },
+        {
+            "end": 1265.84,
+            "start": 1261.28,
+            "text": " And that has been a pretty transformational experience for me personally."
+        },
+        {
+            "end": 1271.8799999999999,
+            "start": 1265.84,
+            "text": " It changed my outlook on life when I started donating and much more substantial part of"
+        },
+        {
+            "end": 1274.8,
+            "start": 1271.8799999999999,
+            "text": " my income and the money that I have made with my books."
+        },
+        {
+            "end": 1276.1599999999999,
+            "start": 1274.8,
+            "text": " So that's what I really admire."
+        },
+        {
+            "end": 1280.24,
+            "start": 1276.1599999999999,
+            "text": " What I don't really like is I guess the focus on guilt."
+        },
+        {
+            "end": 1286.4399999999998,
+            "start": 1280.24,
+            "text": " I think EA got started in the 2010s when a lot of people who I like to describe as born"
+        },
+        {
+            "end": 1290.52,
+            "start": 1286.4399999999998,
+            "text": " altruists, people who were basically always that way, already when they were young, they"
+        },
+        {
+            "end": 1295.3999999999999,
+            "start": 1290.52,
+            "text": " turned vegan and gave away, you know, the money they got from their parents to charity."
+        },
+        {
+            "end": 1300.6000000000001,
+            "start": 1295.4,
+            "text": " They basically discovered each other in that era when social media got started and that's"
+        },
+        {
+            "end": 1302.2,
+            "start": 1300.6000000000001,
+            "text": " how the movement got going."
+        },
+        {
+            "end": 1305.96,
+            "start": 1302.2,
+            "text": " And I think that's beautiful, but it's not for most people."
+        },
+        {
+            "end": 1310.4,
+            "start": 1305.96,
+            "text": " So I couldn't take most of my friends to an EA conference because it's just too weird."
+        },
+        {
+            "end": 1311.4,
+            "start": 1310.4,
+            "text": " Right?"
+        },
+        {
+            "end": 1317.44,
+            "start": 1311.4,
+            "text": " A lot of people who are somewhere in the spectrum or at least neurodiverse, which is great,"
+        },
+        {
+            "end": 1320.4,
+            "start": 1317.44,
+            "text": " which is EA who just continue being EA."
+        },
+        {
+            "end": 1325.74,
+            "start": 1320.4,
+            "text": " But I think there's a lot of room for a different kind of movement that taps into different"
+        },
+        {
+            "end": 1327.68,
+            "start": 1325.74,
+            "text": " sources of motivation."
+        },
+        {
+            "end": 1332.68,
+            "start": 1327.68,
+            "text": " On personally, a pluralist, I care about many things in life, I'm motivated by, well,"
+        },
+        {
+            "end": 1339.0400000000002,
+            "start": 1332.68,
+            "text": " altruism and empathy definitely, but also motivated by other things, maybe enthusiasm,"
+        },
+        {
+            "end": 1340.76,
+            "start": 1339.0400000000002,
+            "text": " maybe even a bit of vanity."
+        },
+        {
+            "end": 1345.2,
+            "start": 1340.76,
+            "text": " And I think that's fine to be motivated by multiple things."
+        },
+        {
+            "end": 1349.4,
+            "start": 1345.2,
+            "text": " What we're trying to do with our organizations at school for more ambition and also what I'm"
+        },
+        {
+            "end": 1354.8400000000001,
+            "start": 1349.4,
+            "text": " calling for in the book is to once again make doing good high status to basically say,"
+        },
+        {
+            "end": 1359.8000000000002,
+            "start": 1354.8400000000001,
+            "text": " like, if you are one of those most talented ambitious people in the world, then you shouldn't"
+        },
+        {
+            "end": 1361.0400000000002,
+            "start": 1359.8000000000002,
+            "text": " work for McKinsey."
+        },
+        {
+            "end": 1362.3600000000001,
+            "start": 1361.0400000000002,
+            "text": " You shouldn't work for Goldman Sachs."
+        },
+        {
+            "end": 1366.24,
+            "start": 1362.3600000000001,
+            "text": " You should be working on the most pressing issues we face as a species."
+        },
+        {
+            "end": 1369.1200000000001,
+            "start": 1366.24,
+            "text": " And we are trying to ground this movement, nodding guilt, right?"
+        },
+        {
+            "end": 1372.24,
+            "start": 1369.1200000000001,
+            "text": " We don't want to see drowning children everywhere."
+        },
+        {
+            "end": 1378.0400000000002,
+            "start": 1372.24,
+            "text": " You know, the famous thought experiment from Peter Singer where he said, yeah, the shallow"
+        },
+        {
+            "end": 1380.1599999999999,
+            "start": 1378.04,
+            "text": " font, well, I guess most of you are the same as well."
+        },
+        {
+            "end": 1381.3999999999999,
+            "start": 1380.1599999999999,
+            "text": " Well, no, about that."
+        },
+        {
+            "end": 1382.96,
+            "start": 1381.3999999999999,
+            "text": " So I won't repeat the story."
+        },
+        {
+            "end": 1384.6,
+            "start": 1382.96,
+            "text": " But yeah, I've never really liked that."
+        },
+        {
+            "end": 1386.96,
+            "start": 1384.6,
+            "text": " It always came across as moral blackmail to me."
+        },
+        {
+            "end": 1391.28,
+            "start": 1386.96,
+            "text": " Like now, suddenly I'm supposed to see drowning kids everywhere when I take a sip from my coffee"
+        },
+        {
+            "end": 1394.12,
+            "start": 1391.28,
+            "text": " right and that I probably soon have bought because it was too expensive."
+        },
+        {
+            "end": 1396.08,
+            "start": 1394.12,
+            "text": " Yeah, I've never really liked that."
+        },
+        {
+            "end": 1401.68,
+            "start": 1396.08,
+            "text": " I would prefer to be part of a movement that is grounded in enthusiasm and excitement"
+        },
+        {
+            "end": 1406.92,
+            "start": 1401.68,
+            "text": " of, yeah, just a simple fact that we can make this world a lot better place and that"
+        },
+        {
+            "end": 1411.1200000000001,
+            "start": 1406.92,
+            "text": " is just really cool to be part of a small group of very dedicated, idealists who want"
+        },
+        {
+            "end": 1413.1200000000001,
+            "start": 1411.1200000000001,
+            "text": " to take on some of these challenges."
+        },
+        {
+            "end": 1415.16,
+            "start": 1413.1200000000001,
+            "text": " All right, so let's take the extreme case here."
+        },
+        {
+            "end": 1420.76,
+            "start": 1415.16,
+            "text": " Let's take some of the Bill Gates who obviously lives extraordinarily well."
+        },
+        {
+            "end": 1425.24,
+            "start": 1420.76,
+            "text": " He flies around in a private plane which he almost certainly owns."
+        },
+        {
+            "end": 1427.8400000000001,
+            "start": 1425.24,
+            "text": " He probably has more than one."
+        },
+        {
+            "end": 1430.92,
+            "start": 1427.8400000000001,
+            "text": " And he spends a fantastic amount of money on himself."
+        },
+        {
+            "end": 1432.72,
+            "start": 1430.92,
+            "text": " He has homes all over the place."
+        },
+        {
+            "end": 1433.88,
+            "start": 1432.72,
+            "text": " Again, I can only presume."
+        },
+        {
+            "end": 1435.44,
+            "start": 1433.88,
+            "text": " I don't actually know Bill."
+        },
+        {
+            "end": 1437.68,
+            "start": 1435.8,
+            "text": " I assume he lives like most billionaires."
+        },
+        {
+            "end": 1444.16,
+            "start": 1437.68,
+            "text": " He spends a lot of money more than thousands of people in the developing world, maybe more"
+        },
+        {
+            "end": 1447.28,
+            "start": 1444.16,
+            "text": " than tens of thousands of people in the developing world on himself."
+        },
+        {
+            "end": 1454.88,
+            "start": 1447.28,
+            "text": " The question is how much should we begrudge him or anyone living that way with having"
+        },
+        {
+            "end": 1457.04,
+            "start": 1454.88,
+            "text": " a mass of those kinds of resources?"
+        },
+        {
+            "end": 1462.68,
+            "start": 1457.04,
+            "text": " In Bill's case, and so you can, in the case of the prototypical selfish billionaire,"
+        },
+        {
+            "end": 1465.92,
+            "start": 1462.68,
+            "text": " I think that we can get to begrudging pretty quickly."
+        },
+        {
+            "end": 1471.92,
+            "start": 1465.92,
+            "text": " But in Bill's case, he's been really probably the most philanthropic person."
+        },
+        {
+            "end": 1476.2,
+            "start": 1471.92,
+            "text": " If not only merely of his generation, of any generation, his personal quirk society."
+        },
+        {
+            "end": 1477.2,
+            "start": 1476.2,
+            "text": " Again, I don't know him."
+        },
+        {
+            "end": 1478.76,
+            "start": 1477.2,
+            "text": " I just know what I read."
+        },
+        {
+            "end": 1481.92,
+            "start": 1478.76,
+            "text": " He's done a tremendous amount of good in the world."
+        },
+        {
+            "end": 1489.04,
+            "start": 1481.92,
+            "text": " And when I think about what is optimal for Bill, it's hard for me to see that the side"
+        },
+        {
+            "end": 1493.2,
+            "start": 1489.04,
+            "text": " of him struggling to figure out how to check his luggage at the southwest counter of"
+        },
+        {
+            "end": 1494.2,
+            "start": 1493.2,
+            "text": " an airport."
+        },
+        {
+            "end": 1496.92,
+            "start": 1494.2,
+            "text": " It's hard to see that, how that's optimal."
+        },
+        {
+            "end": 1503.08,
+            "start": 1496.92,
+            "text": " So do you think he should be flying commercially or do you think that if he saves time,"
+        },
+        {
+            "end": 1508.52,
+            "start": 1503.08,
+            "text": " flying private, where he's free to think about the next thing, he next disease, he wants"
+        },
+        {
+            "end": 1509.52,
+            "start": 1508.52,
+            "text": " to cure."
+        },
+        {
+            "end": 1517.08,
+            "start": 1509.52,
+            "text": " If he found flying commercially as owner as many people do, if he would be reluctant to"
+        },
+        {
+            "end": 1521.8,
+            "start": 1517.08,
+            "text": " travel to that conference where he might meet the person whose project he would fund,"
+        },
+        {
+            "end": 1524.4399999999998,
+            "start": 1521.8,
+            "text": " etc., etc., see the non-donnafex year."
+        },
+        {
+            "end": 1530.52,
+            "start": 1524.4399999999998,
+            "text": " My intuition is, we want Bill being Bill is freely and as happily as possible in a way"
+        },
+        {
+            "end": 1535.36,
+            "start": 1530.52,
+            "text": " that is commensurate with him being as inspired as possible to help the world in all the ways"
+        },
+        {
+            "end": 1537.6399999999999,
+            "start": 1535.36,
+            "text": " he's been helping it, of late."
+        },
+        {
+            "end": 1539.1599999999999,
+            "start": 1537.6399999999999,
+            "text": " So there's a lot to say about this."
+        },
+        {
+            "end": 1542.48,
+            "start": 1539.1599999999999,
+            "text": " A lot of people, indeed, will know me for saying some nasty things about billionaires when"
+        },
+        {
+            "end": 1546.8,
+            "start": 1542.48,
+            "text": " I went to Davos and also being quite critical of billionaire philanthropy."
+        },
+        {
+            "end": 1548.08,
+            "start": 1546.8,
+            "text": " And I think there's a good reason for that."
+        },
+        {
+            "end": 1550.8799999999999,
+            "start": 1548.08,
+            "text": " A lot of philanthropist is really unimpressive."
+        },
+        {
+            "end": 1554.6399999999999,
+            "start": 1550.8799999999999,
+            "text": " You know, it's boring people giving a lot of money to have their name on an already"
+        },
+        {
+            "end": 1560.24,
+            "start": 1554.6399999999999,
+            "text": " wealth run that museum or a university or whatever, you know, let's give Harvard more money."
+        },
+        {
+            "end": 1562.3999999999999,
+            "start": 1560.24,
+            "text": " And I've always found that pretty sad."
+        },
+        {
+            "end": 1570.0,
+            "start": 1562.3999999999999,
+            "text": " At the same time as a historian, I know that there are beautiful exceptions."
+        },
+        {
+            "end": 1573.76,
+            "start": 1570.0,
+            "text": " If you'd like to continue listening to this conversation, you'll need to subscribe at"
+        },
+        {
+            "end": 1574.76,
+            "start": 1573.76,
+            "text": " samherris.org."
+        },
+        {
+            "end": 1580.32,
+            "start": 1574.76,
+            "text": " Once you do, you'll get access to all full-length episodes of the Making Sense Podcast."
+        },
+        {
+            "end": 1583.84,
+            "start": 1580.32,
+            "text": " The podcast is available to everyone through our scholarship program."
+        },
+        {
+            "end": 1588.48,
+            "start": 1583.84,
+            "text": " So if you can't afford a subscription, please request a free account on the website."
+        },
+        {
+            "end": 1593.2,
+            "start": 1588.48,
+            "text": " The Making Sense Podcast is ad-free and relies entirely on listener support."
+        },
+        {
+            "end": 1595.8,
+            "start": 1593.2,
+            "text": " And you can subscribe now at samherris.org."
+        }
+    ],
+    "transcription": " Welcome to the Making Sense Podcast. This is Sam Harris. Just a note to say that if you're hearing this, you're not currently on our subscriber feed and will only be hearing the first part of this conversation. In order to access full episodes of the Making Sense Podcast, you'll need to subscribe at samherris.org. There you'll also find our scholarship program where we offer free accounts to anyone of Can't afford one. We don't run ads on the podcast, and therefore it's made possible entirely to the support of our subscribers. So if you enjoy what we're doing here, please consider becoming one. I am here with Rutger Breggman. Rutger, thanks for going to me. Thanks for having me, Sam. Yes, nice to finally connect with you. I've been seeing your stuff for a while and just read your book, your newest book, which is Moral Ambition, which is a little bit of a departure in tone, but you've also written Utopia for realists and human kinds. This is much more of a call that I actually want to talk about. The call, you've also started the School for Moral Ambition, which I want to talk about. But before we jump into the book, how would you summarize your focus as a historian and just as someone who comes to all these topics we're going to talk about? So my whole career I've been fascinated by history. I studied history at Utrecht University in the Netherlands, and initially I was a bit frustrated by academia. It seemed so insulated. I had this dream once of becoming a professor, and then maybe when I was 50 or 60 I would finally be allowed to write about the big interesting questions of history like why have we conquered the globe, why did the Industrial Revolution start in England, in the West, why not in India or China for example? Those were kind of books that I really loved. Jared Diamond for example, Gernst Gernstierms' Seal. But it started to dawn on me that I would probably have to specialize first and spend four years of my life writing a PhD, which on the one hand seemed really interesting. But on the other hand, I looked at all the PhDs that had recently been published at Utrecht University, and I found all of them really boring. So I thought, you know what, let's go into journalism. But then I found that to be quite frustrating as well. You know, the relentless focus on breaking news on what happens today instead of what happens every day. And then when I was 25, I got my lucky break. It was a new journalism platform that was founded in the Netherlands called the Correspondent. And these guys, the founders, had a bit of a different news philosophy. They wanted to unbreak the news. And they said, Roegger, you can come and work here and write about whatever you want. And focus more on the structural forces that, you know, govern our society. So finally, I could write about all kinds of hobbies of mind. For example, universal basic income. That was something that had long fascinated me. It seemed to me a really exciting idea that moves beyond the traditional political divide of the left versus the right. So as I said, that was my lucky break. That's how I got started. And ever since then, the Correspondent was my platform, my little laboratory where I could develop my ideas. So that's one of the benefits of not being the native speakers that you have your own focus group, a tiny country that no one gets a shit about. And you can test that idea, see what works, see what doesn't. And so that's how I've been writing my books for the past decade. First, as essays for Dutch readers, and then, yeah, reiterating, learning, changing my mind. And then at some point, you're like, yeah, this is a book. Let's write it. So, again, I think we're going to mostly talk about moral ambition, but big picture, how would you describe the state of the world from your point of view? I mean, there's so much is happening in American politics. And it has so many global implications. We've basically, to my eye, we've created an emergency for much of the world, at least optically. So in a way, we've seen what's going to happen. We probably finished this book about a year ago, I would imagine, what's your view of the current situation? So, the first line on my very first book, Utopia Freeless, was that in the past, everything was worse. You know, when we zoom out, we see that we've made tremendous progress in many respects. I mean, you know this, right? The mass of the client of child mortality, of extreme poverty, especially since the 1980s progress has been speeding up. So that is wonderful news. And this was more than a decade ago. When I was a bit frustrated that it seemed we had arrived at the end of history and most of my friends on the political left, they mainly knew what they were against, against growth, against austerity, against establishment, but they didn't really know what the next big thing was going to be. So in that book, I wanted to say like, come on, let's think about what could be the new Utopian milestone. This is beautiful quote from Oscar Wilde, who once wrote that, you know, a map without Utopia on it is not worth even glancing at because it leaves out the one island where humanity is always landing. Now I guess I got what I wished for, things are not boring anymore, but not really the direction I had hoped for, I guess. So I've always loved this statement from Max Rosa from our Walton data, you know, the fantastic website that collects all the data on the state of the world, basically. And I think it's just correct that on the one hand, yeah, the world is really bad. We could do so much better, the world has become better. That's all so true. We have made progress. And yeah, it's all that at the same time, I would say. Just like you, I'm really, really terrified of what's going on in the United States right now. Things are also happening quicker than I expected. And yeah, it's one of the big lessons of history, right? There's nothing in the world by the way we structured our our society right now. It can radically change. And sometimes, sometimes quite quickly, both for the better and for the worse. Yeah, well, we'll come back around to existential concerns because I think one of the ways in which the things are always getting better analysis has left people dissatisfied. I'm thinking in particular, the kinds of criticism and distortion Stephen Pinker had to face when he released his books on this topic. I mean, Stephen certainly was not arguing that progress is inevitable. He was just asking us to acknowledge how like progress we've obviously made very much based on the kinds of data you referenced. But many of us perceive more and more acutely how much potential energy is stored up in the system and how destructive it could be on so many fronts. And AI is the latest wrinkle here. But the idea that we could just needlessly destroy the possibility of building a something like a utopia. And that's certainly seen within reach if we could just iron out our political problems. Yeah. And sideline a few prominent sociopaths. But we do seem on the verge of screwing a lot of it up quite needlessly. So we'll talk about that. I'll come back around to that. Yeah, I guess if I can say one thing about that. So the shape of history is just really, really weird. So in my new book, More on Vision, I've this one graph where I asked this simple question, what was the most important thing that happened in all human history here? And there are a couple of candidates, right? Maybe it was the birth of the Buddha or Jesus or Muhammad. Maybe it was the rise and fall of the great empires, you know, the Roman Empire, theistic Empire. Maybe it was the invention of the wheel. Maybe it was the invention of the compass. I mean, there are so many candidates. But then you just look at some simple graphs, growth of GDP, the kind of extreme poverty, growth of carbon emissions. And all these graphs have basically the same shape. You see the hockey stick that starts in 1750 and it's a rocket that has been launched ever since and seems to be the case that we are, you know, looking at a movie or actually we're participating in a movie and we are near in the climax, you know, when the music is swelling and we have no idea how this is going to end. It could be that the rocket totally crashes quite soon and that the story will be over quite soon or we will break out and colonize the Milky Way and maybe we will be able to build some kind of utopia. And then our ancestors will look back on us and say, gosh, these people are the Asians, right? So that is so weird about being alive today is that we basically have a front row seat to the greatest show in all human history and we don't know how it's going to end. Yeah, this is a point you make toward the end of the book when you point out, you know, quite accurately that the chronocentrism of past generations, the idea that every generation imagines that is living at a, especially significant time has almost always been delusional and yet at this moment is very hard to persuade ourselves that something isn't unique about this moment. I mean, again, AI is the development of the recent years that has sharpened that up, especially, but even prior to that, the pace of change and the asymptotic nature of it and again, the reference in the graphs, you just, you cited the difference between getting things close to right and getting them catastrophically wrong in this generation seems especially important. Yeah, absolutely. I guess I find hope in the knowledge that we've been really scary times in our history and also really immoral times in our history when there was a countercultural revolt of elites against the prevailing immorality of their time. So in the book, I write a lot about the British abolitionist, the late 80th century, who revolted against the elites who were in power back then. So this was a time of huge alcholism and parliament, you know, politicians slurring their speeches. One in five women was a prostitute in London. You have the prince of Wales who was in an extraordinary prick even by royal standards. And then there was a movement of people like Thomas Clarkson and William Wilberforce who said, we are going to make doing good, fashionable once again. And abolitionism was just a part of that. That was one of the main projects. I think we've seen something similar in the United States with the move from the Gilbert H to the progressive era. You know, again, the Gilbert H extraordinary inequality, these rubber barons who have made insane amounts of money with their monopolies in railroads, for example. And they started spending the money in the most crazy ways. You know, the Van der Bilz, for example, built these huge mentions on Fifth Avenue in New York. There was this one mention where they recreated Venice, inside the mention with the canals, et cetera, really bizarre. But then again, there was counter-cultural movement against it, of the leaves, actually, people like Theodore Roosevelt, the progressive president, or people like Louis Brandes, who became the people's lawyer and ended up on the Supreme Court. One of my favorite persons from this era is a woman called Elva Van der Bilz, who married into this Van der Bilz family. And initially, you really wanted to become part of the 400 in New York, like the richest 400 families in New York, who spend the most money on the most silly things. But then, yeah, she divorced. She had a lot of money and became a pretty radical sufferage, and at forget for women's rights, and donated a huge amount of money to the women's rights movement. Almost a little bit like Mackenzie Scott is doing today, the wife of Jeff Beesos. So I guess that's what I'm calling for in this new book, is that again, we need a counter-cultural movement. And initially, now that things are getting a bit dark, and we see so many examples of just belated immorality in the US. The whole Republican party is basically in a state of moral collapse. I've got two young kids, and it's not for me, it's not really left versus right anymore. It's when I think about how I want to raise my kids. It's pretty much the opposite of how these people empower our behavior, like so nasty, basically like bullies all the time. But as I said, we've been there before, and there have been cases in history when we overcame it. I'm sure they're making America great again. What about that project, don't you like, Rutger? That's, so, well, it depends on, yeah, what particular reference you have. I mean, as you know, I'm an advocate of tax fairness. I think it's quite unfair that billionaires around the globe have lower effective tax rates than working class people and middle-class people. I think that this can be fixed, fixed, and that there are beautiful historical examples in history, actually, in the 1950s and the 1960s, when we had a much more reasonable system of taxation and actually also higher growth rates. So yeah, make America great again. Yeah. I see some inspiration there in the past, definitely. Well, let's talk about what is aspirational here. One of the points you make in the book is that moral ambition is contagious, right? That this is what you want is to find a mode of life that is not just a masochistic, right, and merely moralistic, but you want something that is that people aspire to because it's just obviously good. It seems to me that the whole point of our being here ultimately is to make life worth living. And once we've done that, to continue to refine it and safeguard it and just make the possibilities of human happiness more and more beautiful and to spread the wealth around, obviously, right? I mean, the thing that is so excruciating is the level of inequality in our world and how this inequality, you know, you can, whatever delusions you take on board with respect to being self-made. I mean, any, you know, any five-minute analysis of really anyone's situation reveals that it's at bottom. It really is all a matter of luck. I mean, just the people are extraordinarily lucky not to be born in some failed state where they have the opportunity only to get killed in an early age or spectacularly injured, more to die of some tropical disease that we haven't suffered in the developed world for quite some time. So so much of your discussion here is focused on being motivated by these disparities to find them morally intolerable, very much in the spirit of, in which someone like Peter Singer has argued, I mean, you acknowledge in the book that you can't merely castigate people and demand that everyone sacrifice something aspirational about this. And I think we need to focus on that because even some of your past pronouncements, the moments for which you became famous, I think the biggest one was when you were at Davos castigating the billionaires who are having all flown there on private jets. I think you said that some like 1,500 private jets had flown into that meeting. And then they cry when they see David and Bethembrose film, right? Right, yeah, exactly. And funny experience. I'm glad you had the story. I'm sorry, I was on the menu. But the, my concern there is that you can be read or heard as merely demonizing wealth. In the limit, in success, what we want is the wealth to be spread around such that the poorest people on earth live the way the richest people do now, you know, 100 years from now. And it's something like that. Whatever is compatible with physics is something we want to aspire to. Because I don't think we want to be saying at the end of the day that wealth is the problem. Yeah, I can't agree more. And the less to use to understand that, so social democracy, I see myself as an old-fashioned social Democrat. So I think at the 60s and the 70s, the less was the party of progress. Right, it was the party of growth, of innovation, of building. Today, you have ideologies like degrowth, for example, that to me seem to demonize wealth or luxury or whatever. And I'm like, no, like we're way too poor. We should become much richer and then indeed, as you say, spread it around. The very first essay I've ever wrote was when I was 16 years old, I had this epiphany as the son of a preacher. You know, I grew up in the church and you know, this is an age when you start thinking about what do I actually believe? Do I agree with all the dogmas that are served to me? And I wrote this essay about free will. It came to the conclusion that, like, doesn't make sense at all. Like, surely it can't exist. And I guess that argument will resonate with you. And I guess ever, ever from that young age, that it's also always something that has driven me. Whenever we talk about inequality, I think it's especially important to zoom out, right? If you live in a rich country like I do in the Netherlands or I'm currently living in New York, you're already part of the richest 3.5 percent in the world. So when we talk about inequality, we mainly have to talk about global inequality. And the world needs so much more growth in that respect, right? And I'm pretty optimistic that we can make that happen. And that we have already made quite a bit of progress in the last couple of decades. But yeah, I can't agree more that this idea that, I don't know, it's so anti-human in a way. This is quite dominant, maybe, also in environmental circles. The idea that humans are a plague or something like that, that we are a virus, that we are just bad. And that is just something I've always deeply, deeply disagree with. Well, so let's get into the details. So I suspect my tolerance for inequality is more capacious than yours, at least by tendency. I mean, it's not clear to me that we, if we could spread the wealth around completely, immediately that that would be the right solution. To bring, this is one of the arguments, really the only argument for open borders. The idea that, you know, borders, national borders, and the inequalities they enshrine are totally unjustifiable ethically. And so people should be free to move everywhere. And when I look at the consequences of that, what I imagine would happen is that, okay, people would move more or less everywhere until there was no reason to move anywhere, because everywhere was just as mediocre as everywhere else. And again, I come back to this notion of aspiration. I do think we want societies that are wealthy enough, so as to sustain scientific advancement and artistic expression at the highest level. And, you know, everything we have, we celebrate as technological and cultural success in the developed world when we're not distracting ourselves by pointless conflict. So the question is, how does, if we agree that we wanted to maintain that, you know, if we want New York City to be a beautiful, high-functioning city, right? And yet, Peter Singer's analysis wouldn't allow us to prioritize anything in New York today, because life in Sub-Saharan Africa is so bad, all of those resources should obviously go there. How do you swear that? How would you, I mean, if you could just start allocating funds where they should go, would you follow Peter Singer or would you have a different calculus? Quite different. So on the one hand, I deeply admire the man. He's one of the great philosophers of our time. And there's also a lot to like about the movement that he co-founded, you know, these effective altruists. They've gotten a lot of back, backfressed recently, especially hands the SBS fiasco. But on the other hand, there's a lot to admire about them. I guess as someone who comes from the political left, what I like most about them is their moral seriousness. The willingness to actually practice what they preach. So if I go to, I don't know, a conference of a bunch of leftists, I don't see a lot of people giving a lot of money away. I see a lot of people talking about the need for systemic change and overthrowing the paid turkey and, you know, destroying capitalism is more whatever, but very often they don't take a lot of individual responsibility. But if you go to an effective altruist conference, you will meet a lot of people who have donated kidneys to random strangers. Now I still have both of my kidneys, sorry to say, but I admire it. But I admire the people who do that and who give a really substantial part of their income to high-effective charities. I think just like you, I became a member of giving what we can. And that has been a pretty transformational experience for me personally. It changed my outlook on life when I started donating and much more substantial part of my income and the money that I have made with my books. So that's what I really admire. What I don't really like is I guess the focus on guilt. I think EA got started in the 2010s when a lot of people who I like to describe as born altruists, people who were basically always that way, already when they were young, they turned vegan and gave away, you know, the money they got from their parents to charity. They basically discovered each other in that era when social media got started and that's how the movement got going. And I think that's beautiful, but it's not for most people. So I couldn't take most of my friends to an EA conference because it's just too weird. Right? A lot of people who are somewhere in the spectrum or at least neurodiverse, which is great, which is EA who just continue being EA. But I think there's a lot of room for a different kind of movement that taps into different sources of motivation. On personally, a pluralist, I care about many things in life, I'm motivated by, well, altruism and empathy definitely, but also motivated by other things, maybe enthusiasm, maybe even a bit of vanity. And I think that's fine to be motivated by multiple things. What we're trying to do with our organizations at school for more ambition and also what I'm calling for in the book is to once again make doing good high status to basically say, like, if you are one of those most talented ambitious people in the world, then you shouldn't work for McKinsey. You shouldn't work for Goldman Sachs. You should be working on the most pressing issues we face as a species. And we are trying to ground this movement, nodding guilt, right? We don't want to see drowning children everywhere. You know, the famous thought experiment from Peter Singer where he said, yeah, the shallow font, well, I guess most of you are the same as well. Well, no, about that. So I won't repeat the story. But yeah, I've never really liked that. It always came across as moral blackmail to me. Like now, suddenly I'm supposed to see drowning kids everywhere when I take a sip from my coffee right and that I probably soon have bought because it was too expensive. Yeah, I've never really liked that. I would prefer to be part of a movement that is grounded in enthusiasm and excitement of, yeah, just a simple fact that we can make this world a lot better place and that is just really cool to be part of a small group of very dedicated, idealists who want to take on some of these challenges. All right, so let's take the extreme case here. Let's take some of the Bill Gates who obviously lives extraordinarily well. He flies around in a private plane which he almost certainly owns. He probably has more than one. And he spends a fantastic amount of money on himself. He has homes all over the place. Again, I can only presume. I don't actually know Bill. I assume he lives like most billionaires. He spends a lot of money more than thousands of people in the developing world, maybe more than tens of thousands of people in the developing world on himself. The question is how much should we begrudge him or anyone living that way with having a mass of those kinds of resources? In Bill's case, and so you can, in the case of the prototypical selfish billionaire, I think that we can get to begrudging pretty quickly. But in Bill's case, he's been really probably the most philanthropic person. If not only merely of his generation, of any generation, his personal quirk society. Again, I don't know him. I just know what I read. He's done a tremendous amount of good in the world. And when I think about what is optimal for Bill, it's hard for me to see that the side of him struggling to figure out how to check his luggage at the southwest counter of an airport. It's hard to see that, how that's optimal. So do you think he should be flying commercially or do you think that if he saves time, flying private, where he's free to think about the next thing, he next disease, he wants to cure. If he found flying commercially as owner as many people do, if he would be reluctant to travel to that conference where he might meet the person whose project he would fund, etc., etc., see the non-donnafex year. My intuition is, we want Bill being Bill is freely and as happily as possible in a way that is commensurate with him being as inspired as possible to help the world in all the ways he's been helping it, of late. So there's a lot to say about this. A lot of people, indeed, will know me for saying some nasty things about billionaires when I went to Davos and also being quite critical of billionaire philanthropy. And I think there's a good reason for that. A lot of philanthropist is really unimpressive. You know, it's boring people giving a lot of money to have their name on an already wealth run that museum or a university or whatever, you know, let's give Harvard more money. And I've always found that pretty sad. At the same time as a historian, I know that there are beautiful exceptions. If you'd like to continue listening to this conversation, you'll need to subscribe at samherris.org. Once you do, you'll get access to all full-length episodes of the Making Sense Podcast. The podcast is available to everyone through our scholarship program. So if you can't afford a subscription, please request a free account on the website. The Making Sense Podcast is ad-free and relies entirely on listener support. And you can subscribe now at samherris.org."
+}
