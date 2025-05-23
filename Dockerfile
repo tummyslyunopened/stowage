@@ -2,7 +2,8 @@ FROM rust:latest AS builder
 WORKDIR /usr/src/stowage
 RUN USER=root cargo init --bin .
 COPY . . 
-RUN rustup target add x86_64-unknown-linux-musl \
+RUN apt-get update && apt-get install -y musl-tools \
+    && rustup target add x86_64-unknown-linux-musl \
     && cargo test --release \
     && cargo build --release --target x86_64-unknown-linux-musl
 FROM debian:bullseye
