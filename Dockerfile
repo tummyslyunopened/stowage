@@ -6,8 +6,7 @@ RUN cargo build --release
 COPY src/ ./src/
 COPY tests/ ./tests/
 COPY .data/ ./.data/
-RUN touch src/main.rs && \
-    cargo build --release && \
+RUN cargo test --release && \
     cp target/release/stowage .
 FROM debian:bullseye
 RUN apt-get update && \
