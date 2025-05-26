@@ -1,7 +1,10 @@
+
 use actix_web::{web, App, HttpServer};
 use stowage::{AppState, config};
 use std::env;
 use std::path::PathBuf;
+use rusqlite::Connection;
+use stowage::db_utils;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -13,12 +16,20 @@ async fn main() -> std::io::Result<()> {
         .expect("Invalid PORT value");
     let media_path = env::var("MEDIA_PATH").unwrap_or_else(|_| "./media".to_string());
     std::fs::create_dir_all(&media_path)?;
+    let db_path = env::var("DB_PATH").unwrap_or_else(|_| "stowage.db".to_string());
+    let manager = r2d2_sqlite::SqliteConnectionManager::file(&db_path);
+    let db_pool = r2d2::Pool::new(manager).expect("Failed to create DB pool");
+    {
+        let conn = db_pool.get().expect("Failed to get DB connection");
+        db_utils::init_db(&conn).expect("Failed to initialize DB");
+    }
     log::info!("Starting server on {}:{}", host, port);
     log::info!("Serving files from: {}", media_path);
     HttpServer::new(move || {
         App::new()
             .app_data(web::Data::new(AppState {
                 media_path: PathBuf::from(&media_path),
+                db_pool: db_pool.clone(),
             }))
             .configure(config)
     })

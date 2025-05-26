@@ -1,3 +1,63 @@
+use sha2::{Sha256, Digest};
+#[actix_web::test]
+async fn test_db_contents_after_upload() {
+    init_test_logger();
+    let media_path = tempfile::tempdir().unwrap();
+    let db_file = tempfile::NamedTempFile::new().unwrap();
+    let manager = r2d2_sqlite::SqliteConnectionManager::file(db_file.path());
+    let db_pool = r2d2::Pool::new(manager).unwrap();
+    {
+        let conn = db_pool.get().unwrap();
+        stowage::db_utils::init_db(&conn).unwrap();
+    }
+    let app = test::init_service(
+        App::new()
+            .app_data(actix_web::web::Data::new(stowage::AppState {
+                media_path: media_path.path().to_path_buf(),
+                db_pool: db_pool.clone(),
+            }))
+            .configure(stowage::routes),
+    )
+    .await;
+
+    let mut data_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    data_dir.push(".data");
+    let file_path = data_dir.join("example.json");
+    let file_bytes = fs::read(&file_path).unwrap();
+    // Precompute hash
+    let mut hasher = Sha256::new();
+    hasher.update(&file_bytes);
+    let expected_hash = format!("{:x}", hasher.finalize());
+
+    let boundary = "XBOUNDARY";
+    let body = build_multipart_body("file", "example.json", &file_bytes, boundary);
+
+    let req = test::TestRequest::post()
+        .uri("/upload")
+        .insert_header(("content-type", format!("multipart/form-data; boundary={}", boundary)))
+        .set_payload(body)
+        .to_request();
+
+    let resp = test::call_service(&app, req).await;
+    assert_eq!(resp.status(), 201, "File should upload");
+    let body = test::read_body(resp).await;
+    let resp_json: serde_json::Value = serde_json::from_slice(&body).unwrap();
+    let file_id = resp_json["file_id"].as_str().unwrap();
+    let download_url = format!("/files/{}", file_id);
+
+    // Check DB contents
+    let conn = db_pool.get().unwrap();
+    let mut stmt = conn.prepare("SELECT filepath, url, hash FROM File WHERE url = ?1").unwrap();
+    let mut rows = stmt.query([&download_url]).unwrap();
+    let row = rows.next().unwrap().expect("No row found in DB");
+    let db_filepath: String = row.get(0).unwrap();
+    let db_url: String = row.get(1).unwrap();
+    let db_hash: String = row.get(2).unwrap();
+    assert_eq!(db_url, download_url);
+    assert_eq!(db_hash, expected_hash);
+    // The file should exist on disk
+    assert!(std::path::Path::new(&db_filepath).exists());
+}
 use actix_web::{test, App}; 
 use std::fs; 
 use std::path::PathBuf; 
@@ -19,14 +79,22 @@ fn build_multipart_body(field_name: &str, file_name: &str, file_bytes: &[u8], bo
 
 async fn upload_and_download(file_name: &str, should_succeed: bool) {
     let media_path = tempfile::tempdir().unwrap(); 
+    let db_file = tempfile::NamedTempFile::new().unwrap();
+    let manager = r2d2_sqlite::SqliteConnectionManager::file(db_file.path());
+    let db_pool = r2d2::Pool::new(manager).unwrap();
+    {
+        let conn = db_pool.get().unwrap();
+        stowage::db_utils::init_db(&conn).unwrap();
+    }
     let app = test::init_service(
         App::new()
-            .app_data(actix_web::web::Data::new(AppState {
-                media_path: media_path.path().to_path_buf(), 
+            .app_data(actix_web::web::Data::new(stowage::AppState {
+                media_path: media_path.path().to_path_buf(),
+                db_pool: db_pool.clone(),
             }))
-            .configure(stowage::routes), 
+            .configure(stowage::routes),
     )
-    .await; 
+    .await;
 
     let mut data_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR")); 
     data_dir.push(".data"); 
