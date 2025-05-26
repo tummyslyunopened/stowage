@@ -1,7 +1,7 @@
 use actix_web::{web, App, HttpServer};
 use log;
 use r2d2;
-use stowage::{AppState, config, db_utils};
+use stowage::{self, config, db_utils};
 use std::env;
 use std::path::PathBuf;
 
@@ -22,17 +22,32 @@ async fn main() -> std::io::Result<()> {
         let conn = db_pool.get().expect("Failed to get DB connection");
         db_utils::init_db(&conn).expect("Failed to initialize DB");
     }
+    // Get max concurrent downloads from env or use a default of 5
+    let max_concurrent_downloads = env::var("MAX_CONCURRENT_DOWNLOADS")
+        .unwrap_or_else(|_| "5".to_string())
+        .parse::<usize>()
+        .expect("Invalid MAX_CONCURRENT_DOWNLOADS value");
+
     log::info!("Starting server on {}:{}", host, port);
     log::info!("Serving files from: {}", media_path);
-    HttpServer::new(move || {
+    log::info!("Max concurrent downloads: {}", max_concurrent_downloads);
+
+    // Create app state with worker
+    let app_state = stowage::create_app_state(
+        PathBuf::from(&media_path),
+        db_pool.clone(),
+        max_concurrent_downloads,
+    ).await;
+
+    // Start the HTTP server
+    let server = HttpServer::new(move || {
         App::new()
-            .app_data(web::Data::new(AppState {
-                media_path: PathBuf::from(&media_path),
-                db_pool: db_pool.clone(),
-            }))
+            .app_data(web::Data::new(app_state.clone()))
             .configure(config)
     })
     .bind((host, port))?
-    .run()
-    .await
+    .run();
+
+    // Wait for server to finish
+    server.await
 }

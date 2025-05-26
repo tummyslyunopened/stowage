@@ -13,9 +13,21 @@ use std::fs::File;
 use futures_util::stream::StreamExt;
 
 #[derive(serde::Serialize)]
+pub struct JobStatusResponse {
+    pub job_id: String,
+    pub status: String,
+    pub file_id: Option<i64>,
+    pub download_url: Option<String>,
+    pub error: Option<String>,
+    pub created_at: Option<String>,
+    pub updated_at: Option<String>,
+}
+
+#[derive(serde::Serialize)]
 pub struct FileUploadResponse {
     pub file_id: String,
     pub download_url: String,
+    pub message: String,
 }
 
 #[derive(serde::Deserialize)]
@@ -26,7 +38,8 @@ pub struct DownloadRequest {
 #[derive(serde::Serialize, serde::Deserialize)]
 pub struct DownloadResponse {
     pub job_id: String,
-    pub url: String,
+    pub status: String,
+    pub status_url: String,
 }
 
 #[post("/download")]
@@ -50,11 +63,13 @@ pub async fn download_file(
         &req.download_url
     ).map_err(|e| error::ErrorInternalServerError(e))?;
     
-    // Return the job status URL in the response
-    let job_url = format!("/jobs/{}", job_id);
-    Ok(HttpResponse::Created()
-        .insert_header(("Location", job_url.clone()))
-        .json(DownloadResponse { job_id, url: job_url }))
+    // Return the job ID and status URL
+    let status_url = format!("/jobs/{}", job_id);
+    Ok(HttpResponse::Accepted().json(DownloadResponse {
+        job_id: job_id.clone(),
+        status: "NotStarted".to_string(),
+        status_url: status_url.clone(),
+    }))
 }
 
 #[get("/jobs/{job_id}")]
@@ -63,17 +78,59 @@ pub async fn get_job_status(
     data: web::Data<AppState>,
 ) -> Result<HttpResponse, Error> {
     let job_id = path.into_inner();
-    
-    // Get a database connection
     let conn = data.db_pool.get()
         .map_err(|e| error::ErrorInternalServerError(e))?;
     
-    // Get the job status
-    let job = db_utils::get_job_by_id(&conn, &job_id)
-        .map_err(|e| error::ErrorInternalServerError(e))?;
-    
-    // Return the job status in the response
-    Ok(HttpResponse::Ok().json(job))
+    match db_utils::get_job_by_id(&conn, &job_id) {
+        Ok(Some(job)) => {
+            let (status, _error): (&str, Option<String>) = match job.status {
+                db_utils::JobStatus::NotStarted => ("NotStarted", None),
+                db_utils::JobStatus::Running => ("Running", None),
+                db_utils::JobStatus::Completed => ("Completed", None),
+            };
+            
+            // Get file info if file_id exists
+            let (_file_id, download_url) = if let Some(f_id) = job.file_id {
+                match db_utils::get_file_by_id(&conn, f_id) {
+                    Ok(file) => (Some(f_id), Some(file.url)),
+                    Err(_) => (Some(f_id), None),
+                }
+            } else {
+                (None, None)
+            };
+            
+            // Get timestamps
+            let created_at = conn.query_row::<String, _, _>(
+                "SELECT created_at FROM Job WHERE id = ?1",
+                [&job.id],
+                |row| row.get(0)
+            ).ok();
+            
+            let updated_at = conn.query_row::<String, _, _>(
+                "SELECT updated_at FROM Job WHERE id = ?1",
+                [&job.id],
+                |row| row.get(0)
+            ).ok();
+            
+            Ok(HttpResponse::Ok().json(JobStatusResponse {
+                job_id: job.id,
+                status: status.to_string(),
+                file_id: job.file_id,
+                download_url,
+                error: job.error,
+                created_at,
+                updated_at,
+            }))
+        },
+        Ok(None) => {
+            Ok(HttpResponse::NotFound().json(serde_json::json!({
+                "error": "Job not found"
+            })))
+        },
+        Err(e) => {
+            Err(error::ErrorInternalServerError(e))
+        }
+    }
 }
 
 #[post("/upload")]
@@ -88,7 +145,7 @@ pub async fn upload_file(
     
     let temp_path = file_path.with_extension("tmp");
     
-    while let Some(item) = payload.next().await {
+    if let Some(item) = payload.next().await {
         let field = item.map_err(|e| error::ErrorBadRequest(format!("Multipart error: {}", e)))?;
         let _filename = get_filename_from_field(&field);
         eprintln!("DEBUG: filename={:?}", _filename);
@@ -107,36 +164,43 @@ pub async fn upload_file(
 
         // Insert into DB or deduplicate
         let conn = data.db_pool.get().map_err(|e| error::ErrorInternalServerError(e))?;
-        if let Some(existing_path) = db_utils::get_filepath_by_hash(&conn, &hash).map_err(|e| error::ErrorInternalServerError(e))? {
-            // Duplicate: delete new file, use original path in DB
-            let _ = std::fs::remove_file(&final_path);
-            
-            // For duplicates, return 200 OK with the original file's URL
-            let original_file_id = std::path::Path::new(&existing_path)
-                .file_stem()
-                .and_then(|s| s.to_str())
-                .unwrap_or("")
-                .to_string();
+        
+        // Check for existing file with same hash
+        match db_utils::get_filepath_by_hash(&conn, &hash).map_err(|e| error::ErrorInternalServerError(e))? {
+            Some(existing_path) => {
+                // Duplicate: delete new file, use original path in DB
+                let _ = std::fs::remove_file(&final_path);
                 
-            let download_url = format!("/files/{}", original_file_id);
-            return Ok(HttpResponse::Ok().json(FileUploadResponse {
-                file_id: original_file_id,
-                download_url,
-            }));
-        } else {
-            // New file: insert as normal and return 201 Created
-            db_utils::insert_file(&conn, final_path.to_string_lossy().as_ref(), &download_url, &hash)
-                .map_err(|e| error::ErrorInternalServerError(e))?;
-                
-            return Ok(HttpResponse::Created().json(FileUploadResponse {
-                file_id,
-                download_url,
-            }));
+                // For duplicates, return 200 OK with the original file's URL
+                let original_file_id = std::path::Path::new(&existing_path)
+                    .file_stem()
+                    .and_then(|s| s.to_str())
+                    .unwrap_or("")
+                    .to_string();
+                    
+                let download_url = format!("/files/{}", original_file_id);
+                Ok(HttpResponse::Ok().json(FileUploadResponse {
+                    file_id: original_file_id,
+                    download_url,
+                    message: "File already exists".to_string(),
+                }))
+            },
+            None => {
+                // New file: insert as normal and return 201 Created
+                db_utils::insert_file(&conn, final_path.to_string_lossy().as_ref(), &download_url, &hash)
+                    .map_err(|e| error::ErrorInternalServerError(e))?;
+                    
+                Ok(HttpResponse::Created().json(FileUploadResponse {
+                    file_id: file_id.clone(),
+                    download_url: format!("/files/{}", file_id),
+                    message: "File uploaded successfully".to_string(),
+                }))
+            }
         }
+    } else {
+        eprintln!("DEBUG: No file provided in multipart");
+        Err(error::ErrorBadRequest("No file provided"))
     }
-    
-    eprintln!("DEBUG: No file provided in multipart");
-    Err(error::ErrorBadRequest("No file provided"))
 }
 
 #[get("/files/{file_id}")]

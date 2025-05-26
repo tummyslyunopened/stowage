@@ -1,4 +1,5 @@
 use sha2::{Sha256, Digest};
+
 #[actix_web::test]
 async fn test_db_contents_after_upload() {
     init_test_logger();
@@ -15,6 +16,7 @@ async fn test_db_contents_after_upload() {
             .app_data(actix_web::web::Data::new(stowage::AppState {
                 media_path: media_path.path().to_path_buf(),
                 db_pool: db_pool.clone(),
+                worker: None
             }))
             .configure(stowage::routes),
     )
@@ -91,6 +93,7 @@ async fn upload_and_download(file_name: &str, should_succeed: bool) {
             .app_data(actix_web::web::Data::new(stowage::AppState {
                 media_path: media_path.path().to_path_buf(),
                 db_pool: db_pool.clone(),
+                worker: None
             }))
             .configure(stowage::routes),
     )
@@ -196,6 +199,7 @@ async fn test_upload_same_filename_different_content() {
             .app_data(actix_web::web::Data::new(stowage::AppState {
                 media_path: media_path.path().to_path_buf(),
                 db_pool: db_pool.clone(),
+                worker: None
             }))
             .configure(stowage::routes),
     )
@@ -264,6 +268,7 @@ async fn test_upload_same_content_different_filename() {
             .app_data(actix_web::web::Data::new(stowage::AppState {
                 media_path: media_path.path().to_path_buf(),
                 db_pool: db_pool.clone(),
+                worker: None
             }))
             .configure(stowage::routes),
     )
@@ -357,6 +362,7 @@ async fn test_download_job_creation() {
             .app_data(actix_web::web::Data::new(stowage::AppState {
                 media_path: media_path.path().to_path_buf(),
                 db_pool: db_pool.clone(),
+                worker: None
             }))
             .configure(stowage::routes),
     )
@@ -373,10 +379,10 @@ async fn test_download_job_creation() {
     let resp = test::call_service(&app, req).await;
     
     // Verify the response
-    assert_eq!(resp.status(), StatusCode::CREATED);
+    assert_eq!(resp.status(), StatusCode::ACCEPTED);
     let body: stowage::handlers::DownloadResponse = test::read_body_json(resp).await;
     assert!(!body.job_id.is_empty());
-    assert!(body.url.ends_with(&format!("/jobs/{}", body.job_id)));
+    assert!(body.status_url.ends_with(&format!("/jobs/{}", body.job_id)));
     
     // 2. Verify the job was created in the database
     let conn = db_pool.get().unwrap();
@@ -391,14 +397,15 @@ async fn test_download_job_creation() {
     
     // 3. Verify the job status endpoint
     let status_req = test::TestRequest::get()
-        .uri(&body.url)
+        .uri(&body.status_url)
         .to_request();
     let status_resp = test::call_service(&app, status_req).await;
     
     assert_eq!(status_resp.status(), StatusCode::OK);
-    let status_body: stowage::db_utils::JobRecord = test::read_body_json(status_resp).await;
-    assert_eq!(status_body.id, body.job_id);
-    assert_eq!(status_body.status, stowage::db_utils::JobStatus::NotStarted);
+    let status_body: serde_json::Value = test::read_body_json(status_resp).await;
+    assert_eq!(status_body["job_id"], body.job_id);
+    assert_eq!(status_body["status"], "NotStarted");
+    assert_eq!(status_body["file_id"], serde_json::Value::Null);
 }
 
 #[actix_web::test]
