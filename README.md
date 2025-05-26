@@ -52,28 +52,124 @@ A high-performance file server for audio, video, images, RSS, and JSON files, bu
    cargo run --release
    ```
 
-## API Endpoints
 
-### Upload a File
+## Comprehensive API Documentation
 
-```
-POST /upload
-Content-Type: multipart/form-data
-```
+Stowage is a high-performance file server for audio, video, images, RSS, and JSON files, built with Rust and Actix-web.
 
-**Example Response:**
+### Endpoints
+
+#### 1. `POST /upload`
+
+**Description:**  
+Upload a file to the server. The file will be validated for allowed types and stored with a unique, non-sequential ID.
+
+**Request:**
+- Content-Type: `multipart/form-data`
+- Form field: `file` (the file to upload)
+
+**Response (201 Created):**
 ```json
 {
-  "file_id": "550e8400-e29b-41d4-a716-446655440000",
-  "download_url": "/files/550e8400-e29b-41d4-a716-446655440000"
+  "file_id": "e.g. 123e4567-e89b-12d3-a456-426614174000",
+  "download_url": "/files/123e4567-e89b-12d3-a456-426614174000"
 }
 ```
 
-### Download a File
+**Errors:**
+- 400 Bad Request: Invalid file type, missing file, or upload error.
 
+---
+
+#### 2. `GET /files/{file_id}`
+
+**Description:**  
+Download a previously uploaded file by its unique ID.
+
+**Request:**
+- Path parameter: `file_id` (the UUID returned from upload)
+
+**Response (200 OK):**
+- The file as a binary stream, with appropriate content-type.
+
+**Errors:**
+- 404 Not Found: File does not exist.
+
+---
+
+#### 3. `GET /about`
+
+**Description:**  
+Get information about the Stowage server.
+
+**Response (200 OK):**
+- Plain text description of the server and its features.
+
+---
+
+### Allowed File Types
+
+- Audio, video, image files (by MIME type)
+- JSON (`application/json`)
+- XML (`application/xml`, `text/xml`, `application/rss+xml`)
+- Octet-stream (`application/octet-stream`)
+
+Files are validated by both extension and content.
+
+---
+
+### Example Python Usage
+
+#### Upload a File
+
+```python
+import requests
+
+url = "http://localhost:8080/upload"
+file_path = "example.json"  # Replace with your file
+
+with open(file_path, "rb") as f:
+    files = {"file": (file_path, f)}
+    response = requests.post(url, files=files)
+
+print("Status:", response.status_code)
+print("Response:", response.json())
 ```
-GET /files/{file_id}
+
+#### Download a File
+
+```python
+import requests
+
+file_id = "your-file-id-here"  # Replace with the file_id from upload response
+url = f"http://localhost:8080/files/{file_id}"
+
+response = requests.get(url)
+if response.status_code == 200:
+    with open("downloaded_file", "wb") as f:
+        f.write(response.content)
+    print("File downloaded successfully.")
+else:
+    print("Download failed:", response.status_code)
 ```
+
+#### Get About Information
+
+```python
+import requests
+
+url = "http://localhost:8080/about"
+response = requests.get(url)
+print(response.text)
+```
+
+---
+
+### Notes
+
+- The server stores files in a directory specified by the `MEDIA_PATH` environment variable (default: `/app/media`).
+- File IDs are UUIDs and do not reveal upload order or file type.
+- Only allowed file types are accepted; others are rejected with a 400 error.
 
 ## Configuration
 

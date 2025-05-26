@@ -1,5 +1,7 @@
 mod config;
 pub mod handlers;
+pub mod file_utils;
+pub mod multipart_utils;
 use std::path::PathBuf;
 pub use config::Config;
 pub use handlers::{serve_file, upload_file, FileUploadResponse, about};
