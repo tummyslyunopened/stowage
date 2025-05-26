@@ -61,7 +61,6 @@ async fn test_db_contents_after_upload() {
 use actix_web::{test, App}; 
 use std::fs; 
 use std::path::PathBuf; 
-use stowage::AppState; 
 
 fn build_multipart_body(field_name: &str, file_name: &str, file_bytes: &[u8], boundary: &str) -> Vec<u8> {
     let mut body = Vec::new(); 
@@ -176,6 +175,165 @@ async fn test_upload_and_download_disguised_png() {
 async fn test_upload_and_download_disguised_xml() {
     init_test_logger();
     upload_and_download("disguised.xml", false).await;
+}
+
+#[actix_web::test]
+async fn test_upload_same_filename_different_content() {
+    init_test_logger();
+    
+    // Setup test environment
+    let media_path = tempfile::tempdir().unwrap();
+    let db_file = tempfile::NamedTempFile::new().unwrap();
+    let manager = r2d2_sqlite::SqliteConnectionManager::file(db_file.path());
+    let db_pool = r2d2::Pool::new(manager).unwrap();
+    {
+        let conn = db_pool.get().unwrap();
+        stowage::db_utils::init_db(&conn).unwrap();
+    }
+    let app = test::init_service(
+        App::new()
+            .app_data(actix_web::web::Data::new(stowage::AppState {
+                media_path: media_path.path().to_path_buf(),
+                db_pool: db_pool.clone(),
+            }))
+            .configure(stowage::routes),
+    )
+    .await;
+
+    // Get paths to both files
+    let mut data_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    data_dir.push(".data");
+    let file1_path = data_dir.join("example.json");
+    let file2_path = data_dir.join(".dup/example.json");
+
+    // Read both files
+    let file1_bytes = fs::read(&file1_path).unwrap();
+    let file2_bytes = fs::read(&file2_path).unwrap();
+
+    // Upload first file
+    let boundary1 = "BOUNDARY1";
+    let body1 = build_multipart_body("file", "example.json", &file1_bytes, boundary1);
+    let req1 = test::TestRequest::post()
+        .uri("/upload")
+        .insert_header(("content-type", format!("multipart/form-data; boundary={}", boundary1)))
+        .set_payload(body1)
+        .to_request();
+    let resp1 = test::call_service(&app, req1).await;
+    assert_eq!(resp1.status(), 201, "First file should upload successfully");
+    let body1 = test::read_body(resp1).await;
+    let resp_json1: serde_json::Value = serde_json::from_slice(&body1).unwrap();
+    let download_url1 = resp_json1["download_url"].as_str().unwrap().to_string();
+    
+    // Upload second file with same name but different content
+    let boundary2 = "BOUNDARY2";
+    let body2 = build_multipart_body("file", "example.json", &file2_bytes, boundary2);
+    let req2 = test::TestRequest::post()
+        .uri("/upload")
+        .insert_header(("content-type", format!("multipart/form-data; boundary={}", boundary2)))
+        .set_payload(body2)
+        .to_request();
+    let resp2 = test::call_service(&app, req2).await;
+    assert_eq!(resp2.status(), 201, "Second file should upload successfully");
+    let body2 = test::read_body(resp2).await;
+    let resp_json2: serde_json::Value = serde_json::from_slice(&body2).unwrap();
+    let download_url2 = resp_json2["download_url"].as_str().unwrap().to_string();
+    
+    // Verify different URLs were generated
+    assert_ne!(
+        download_url1, download_url2,
+        "Different files with same name should have different download URLs"
+    );
+}
+
+#[actix_web::test]
+async fn test_upload_same_content_different_filename() {
+    init_test_logger();
+    
+    // Setup test environment
+    let media_path = tempfile::tempdir().unwrap();
+    let db_file = tempfile::NamedTempFile::new().unwrap();
+    let manager = r2d2_sqlite::SqliteConnectionManager::file(db_file.path());
+    let db_pool = r2d2::Pool::new(manager).unwrap();
+    {
+        let conn = db_pool.get().unwrap();
+        stowage::db_utils::init_db(&conn).unwrap();
+    }
+    let app = test::init_service(
+        App::new()
+            .app_data(actix_web::web::Data::new(stowage::AppState {
+                media_path: media_path.path().to_path_buf(),
+                db_pool: db_pool.clone(),
+            }))
+            .configure(stowage::routes),
+    )
+    .await;
+
+    // Get path to the test file
+    let mut data_dir = PathBuf::from(env!("CARGO_MANIFEST_DIR"));
+    data_dir.push(".data");
+    let file_path = data_dir.join("example.json");
+    let file_bytes = fs::read(&file_path).unwrap();
+
+    // Upload first file
+    let boundary1 = "BOUNDARY1";
+    let body1 = build_multipart_body("file", "original.json", &file_bytes, boundary1);
+    let req1 = test::TestRequest::post()
+        .uri("/upload")
+        .insert_header(("content-type", format!("multipart/form-data; boundary={}", boundary1)))
+        .set_payload(body1)
+        .to_request();
+    let resp1 = test::call_service(&app, req1).await;
+    assert_eq!(resp1.status(), 201, "First file should upload successfully");
+    let body1 = test::read_body(resp1).await;
+    let resp_json1: serde_json::Value = serde_json::from_slice(&body1).unwrap();
+    let download_url1 = resp_json1["download_url"].as_str().unwrap().to_string();
+    let file_id1 = resp_json1["file_id"].as_str().unwrap().to_string();
+    
+    // Get the count of records before second upload
+    let conn = db_pool.get().unwrap();
+    let count_before: i64 = conn.query_row(
+        "SELECT COUNT(*) FROM File",
+        [],
+        |row| row.get(0)
+    ).unwrap();
+
+    // Upload same content with different filename
+    let boundary2 = "BOUNDARY2";
+    let body2 = build_multipart_body("file", "duplicate.json", &file_bytes, boundary2);
+    let req2 = test::TestRequest::post()
+        .uri("/upload")
+        .insert_header(("content-type", format!("multipart/form-data; boundary={}", boundary2)))
+        .set_payload(body2)
+        .to_request();
+    let resp2 = test::call_service(&app, req2).await;
+    assert_eq!(resp2.status(), 200, "Duplicate content should return 200 with original URL");
+    let body2 = test::read_body(resp2).await;
+    let resp_json2: serde_json::Value = serde_json::from_slice(&body2).unwrap();
+    let download_url2 = resp_json2["download_url"].as_str().unwrap().to_string();
+    
+    // Verify the same URL is returned
+    assert_eq!(
+        download_url1, download_url2,
+        "Same content should return the same download URL regardless of filename"
+    );
+    
+    // Verify no new record was added to the database
+    let count_after: i64 = conn.query_row(
+        "SELECT COUNT(*) FROM File",
+        [],
+        |row| row.get(0)
+    ).unwrap();
+    assert_eq!(
+        count_before, count_after,
+        "No new database record should be created for duplicate content"
+    );
+    
+    // Verify the file_id in the response matches the first upload
+    let file_id2 = resp_json2["file_id"].as_str().unwrap().to_string();
+    assert_eq!(
+        file_id1, file_id2,
+        "Same file_id should be returned for duplicate content"
+    );
 }
 
 #[actix_web::test]

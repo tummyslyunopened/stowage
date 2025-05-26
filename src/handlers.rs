@@ -1,4 +1,3 @@
-
 use super::AppState;
 use actix_multipart::Multipart;
 use actix_web::{
@@ -9,7 +8,6 @@ use actix_files::NamedFile;
 use crate::file_utils::*;
 use crate::multipart_utils::*;
 use crate::db_utils;
-use r2d2_sqlite::SqliteConnectionManager;
 use sha2::{Sha256, Digest};
 use std::fs::File;
 use futures_util::stream::StreamExt;
@@ -54,18 +52,29 @@ pub async fn upload_file(
         if let Some(existing_path) = db_utils::get_filepath_by_hash(&conn, &hash).map_err(|e| error::ErrorInternalServerError(e))? {
             // Duplicate: delete new file, use original path in DB
             let _ = std::fs::remove_file(&final_path);
-            db_utils::insert_file(&conn, &existing_path, &download_url, &hash)
-                .map_err(|e| error::ErrorInternalServerError(e))?;
+            
+            // For duplicates, return 200 OK with the original file's URL
+            let original_file_id = std::path::Path::new(&existing_path)
+                .file_stem()
+                .and_then(|s| s.to_str())
+                .unwrap_or("")
+                .to_string();
+                
+            let download_url = format!("/files/{}", original_file_id);
+            return Ok(HttpResponse::Ok().json(FileUploadResponse {
+                file_id: original_file_id,
+                download_url,
+            }));
         } else {
-            // New file: insert as normal
+            // New file: insert as normal and return 201 Created
             db_utils::insert_file(&conn, final_path.to_string_lossy().as_ref(), &download_url, &hash)
                 .map_err(|e| error::ErrorInternalServerError(e))?;
+                
+            return Ok(HttpResponse::Created().json(FileUploadResponse {
+                file_id,
+                download_url,
+            }));
         }
-
-        return Ok(HttpResponse::Created().json(FileUploadResponse {
-            file_id,
-            download_url,
-        }));
     }
     
     eprintln!("DEBUG: No file provided in multipart");

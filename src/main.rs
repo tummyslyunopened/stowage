@@ -1,10 +1,9 @@
-
 use actix_web::{web, App, HttpServer};
-use stowage::{AppState, config};
+use log;
+use r2d2;
+use stowage::{AppState, config, db_utils};
 use std::env;
 use std::path::PathBuf;
-use rusqlite::Connection;
-use stowage::db_utils;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
