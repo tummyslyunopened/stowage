@@ -58,9 +58,10 @@ async fn test_db_contents_after_upload() {
     // The file should exist on disk
     assert!(std::path::Path::new(&db_filepath).exists());
 }
-use actix_web::{test, App}; 
+use actix_web::{test, App, http::StatusCode}; 
 use std::fs; 
-use std::path::PathBuf; 
+use std::path::PathBuf;
+use serde_json::json; 
 
 fn build_multipart_body(field_name: &str, file_name: &str, file_bytes: &[u8], boundary: &str) -> Vec<u8> {
     let mut body = Vec::new(); 
@@ -334,6 +335,70 @@ async fn test_upload_same_content_different_filename() {
         file_id1, file_id2,
         "Same file_id should be returned for duplicate content"
     );
+}
+
+#[actix_web::test]
+async fn test_download_job_creation() {
+    init_test_logger();
+    let media_path = tempfile::tempdir().unwrap();
+    let db_file = tempfile::NamedTempFile::new().unwrap();
+    let manager = r2d2_sqlite::SqliteConnectionManager::file(db_file.path());
+    let db_pool = r2d2::Pool::new(manager).unwrap();
+    
+    // Initialize the database
+    {
+        let conn = db_pool.get().unwrap();
+        stowage::db_utils::init_db(&conn).unwrap();
+    }
+    
+    // Create test app
+    let app = test::init_service(
+        App::new()
+            .app_data(actix_web::web::Data::new(stowage::AppState {
+                media_path: media_path.path().to_path_buf(),
+                db_pool: db_pool.clone(),
+            }))
+            .configure(stowage::routes),
+    )
+    .await;
+
+    // Test data
+    let test_url = "https://example.com/this/does/not/exist.txt";
+    
+    // 1. Make a request to create a download job
+    let req = test::TestRequest::post()
+        .uri("/download")
+        .set_json(&json!({"download_url": test_url}))
+        .to_request();
+    let resp = test::call_service(&app, req).await;
+    
+    // Verify the response
+    assert_eq!(resp.status(), StatusCode::CREATED);
+    let body: stowage::handlers::DownloadResponse = test::read_body_json(resp).await;
+    assert!(!body.job_id.is_empty());
+    assert!(body.url.ends_with(&format!("/jobs/{}", body.job_id)));
+    
+    // 2. Verify the job was created in the database
+    let conn = db_pool.get().unwrap();
+    let job = stowage::db_utils::get_job_by_id(&conn, &body.job_id)
+        .expect("Failed to get job from database")
+        .expect("Job not found in database");
+    
+    assert_eq!(job.id, body.job_id);
+    assert_eq!(job.status, stowage::db_utils::JobStatus::NotStarted);
+    assert_eq!(job.download_url, test_url);
+    assert!(job.file_id.is_none(), "File ID should be None for new job");
+    
+    // 3. Verify the job status endpoint
+    let status_req = test::TestRequest::get()
+        .uri(&body.url)
+        .to_request();
+    let status_resp = test::call_service(&app, status_req).await;
+    
+    assert_eq!(status_resp.status(), StatusCode::OK);
+    let status_body: stowage::db_utils::JobRecord = test::read_body_json(status_resp).await;
+    assert_eq!(status_body.id, body.job_id);
+    assert_eq!(status_body.status, stowage::db_utils::JobStatus::NotStarted);
 }
 
 #[actix_web::test]

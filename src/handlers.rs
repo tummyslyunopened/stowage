@@ -18,6 +18,64 @@ pub struct FileUploadResponse {
     pub download_url: String,
 }
 
+#[derive(serde::Deserialize)]
+pub struct DownloadRequest {
+    pub download_url: String,
+}
+
+#[derive(serde::Serialize, serde::Deserialize)]
+pub struct DownloadResponse {
+    pub job_id: String,
+    pub url: String,
+}
+
+#[post("/download")]
+pub async fn download_file(
+    data: web::Data<AppState>,
+    req: web::Json<DownloadRequest>,
+) -> Result<HttpResponse, Error> {
+    // Generate a new job ID
+    let job_id = Uuid::new_v4().to_string();
+    
+    // Get a database connection
+    let conn = data.db_pool.get()
+        .map_err(|e| error::ErrorInternalServerError(e))?;
+    
+    // Insert the new job with NotStarted status and null file_id
+    db_utils::insert_job(
+        &conn,
+        &job_id,
+        &db_utils::JobStatus::NotStarted,
+        None,
+        &req.download_url
+    ).map_err(|e| error::ErrorInternalServerError(e))?;
+    
+    // Return the job status URL in the response
+    let job_url = format!("/jobs/{}", job_id);
+    Ok(HttpResponse::Created()
+        .insert_header(("Location", job_url.clone()))
+        .json(DownloadResponse { job_id, url: job_url }))
+}
+
+#[get("/jobs/{job_id}")]
+pub async fn get_job_status(
+    path: web::Path<String>,
+    data: web::Data<AppState>,
+) -> Result<HttpResponse, Error> {
+    let job_id = path.into_inner();
+    
+    // Get a database connection
+    let conn = data.db_pool.get()
+        .map_err(|e| error::ErrorInternalServerError(e))?;
+    
+    // Get the job status
+    let job = db_utils::get_job_by_id(&conn, &job_id)
+        .map_err(|e| error::ErrorInternalServerError(e))?;
+    
+    // Return the job status in the response
+    Ok(HttpResponse::Ok().json(job))
+}
+
 #[post("/upload")]
 pub async fn upload_file(
     mut payload: Multipart,

@@ -41,6 +41,7 @@ impl std::str::FromStr for JobStatus {
     }
 }
 
+#[derive(serde::Serialize, serde::Deserialize)]
 pub struct JobRecord {
     pub id: String, // UUID
     pub status: JobStatus,
