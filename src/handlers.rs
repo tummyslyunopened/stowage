@@ -38,7 +38,6 @@ pub struct DownloadRequest {
 #[derive(serde::Serialize, serde::Deserialize)]
 pub struct DownloadResponse {
     pub job_id: String,
-    pub status: String,
     pub status_url: String,
 }
 
@@ -46,14 +45,13 @@ pub struct DownloadResponse {
 pub async fn download_file(
     data: web::Data<AppState>,
     req: web::Json<DownloadRequest>,
+    req_head: HttpRequest,
 ) -> Result<HttpResponse, Error> {
     // Generate a new job ID
     let job_id = Uuid::new_v4().to_string();
-    
     // Get a database connection
     let conn = data.db_pool.get()
         .map_err(|e| error::ErrorInternalServerError(e))?;
-    
     // Insert the new job with NotStarted status and null file_id
     db_utils::insert_job(
         &conn,
@@ -62,13 +60,14 @@ pub async fn download_file(
         None,
         &req.download_url
     ).map_err(|e| error::ErrorInternalServerError(e))?;
-    
-    // Return the job ID and status URL
-    let status_url = format!("/jobs/{}", job_id);
+    // Compose full status URL
+    let conn_info = req_head.connection_info();
+    let scheme = conn_info.scheme();
+    let host = conn_info.host();
+    let status_url = format!("{}://{}/jobs/{}", scheme, host, job_id);
     Ok(HttpResponse::Accepted().json(DownloadResponse {
         job_id: job_id.clone(),
-        status: "NotStarted".to_string(),
-        status_url: status_url.clone(),
+        status_url,
     }))
 }
 
@@ -89,14 +88,11 @@ pub async fn get_job_status(
                 db_utils::JobStatus::Completed => ("Completed", None),
             };
             
-            // Get file info if file_id exists
-            let (_file_id, download_url) = if let Some(f_id) = job.file_id {
-                match db_utils::get_file_by_id(&conn, f_id) {
-                    Ok(file) => (Some(f_id), Some(file.url)),
-                    Err(_) => (Some(f_id), None),
-                }
+            // Always return the UUID-based download URL for completed jobs
+            let download_url = if job.status == db_utils::JobStatus::Completed {
+                Some(format!("/files/{}", job.id))
             } else {
-                (None, None)
+                Some(job.download_url.clone())
             };
             
             // Get timestamps
@@ -115,7 +111,7 @@ pub async fn get_job_status(
             Ok(HttpResponse::Ok().json(JobStatusResponse {
                 job_id: job.id,
                 status: status.to_string(),
-                file_id: job.file_id,
+                file_id: None, // Always None, never expose numeric file_id
                 download_url,
                 error: job.error,
                 created_at,

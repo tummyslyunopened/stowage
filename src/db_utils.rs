@@ -1,5 +1,5 @@
 // src/db_utils.rs
-use rusqlite::{params, Connection, Result};
+use rusqlite::{params, Connection, Result, OptionalExtension};
 
 // Job status enum for Job table
 #[derive(Debug, Clone, Copy, PartialEq, Eq, serde::Serialize, serde::Deserialize)]
@@ -132,45 +132,31 @@ pub fn get_job_by_id(conn: &Connection, id: &str) -> Result<Option<JobRecord>> {
 
 /// Get and start a job that's not started yet
 pub fn get_and_start_job(conn: &Connection) -> Result<Option<JobRecord>> {
-    // First, find a job that's not started
-    let job_id: Option<String> = {
-        let tx = conn.unchecked_transaction()?;
-        let mut stmt = tx.prepare(
-            "SELECT id FROM Job WHERE status = 'NotStarted' ORDER BY created_at ASC LIMIT 1"
-        )?;
-        
-        let mut rows = stmt.query_map([], |row| row.get(0))?;
-        let job_id = rows.next().transpose()?;
-        drop(rows);
-        drop(stmt);
-        
-        job_id
-    };
-    
-    // If we found a job, update its status to Running
+    // Atomically select and update a NotStarted job to Running
+    let tx = conn.unchecked_transaction()?;
+    let job_id: Option<String> = tx.query_row(
+        "SELECT id FROM Job WHERE status = 'NotStarted' ORDER BY created_at ASC LIMIT 1",
+        [],
+        |row| row.get(0),
+    ).optional()?;
+
     if let Some(job_id) = job_id {
-        // Start a new transaction for the update
-        let tx = conn.unchecked_transaction()?;
-        tx.execute(
-            "UPDATE Job SET status = ?1 WHERE id = ?2 AND status = 'Not Started'",
-            params!["Running", job_id],
+        let updated = tx.execute(
+            "UPDATE Job SET status = 'Running', updated_at = CURRENT_TIMESTAMP WHERE id = ?1 AND status = 'NotStarted'",
+            params![&job_id],
         )?;
-        
-        // If the update affected 1 row, get the full job details
-        if tx.changes() == 1 {
+        if updated == 1 {
             tx.commit()?;
-            
-            // Get the full job details
             if let Some(mut job) = get_job_by_id(conn, &job_id)? {
                 job.status = JobStatus::Running;
                 return Ok(Some(job));
             }
         } else {
-            // If no rows were updated, the job was taken by another process
             tx.rollback()?;
         }
+    } else {
+        tx.rollback()?;
     }
-    
     Ok(None)
 }
 

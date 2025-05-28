@@ -1,0 +1,22 @@
+POST http://localhost:8080/download
+Content-Type: application/json
+
+{
+    "download_url": "http://kneecap.2wu.me/media/transcripts/052ef596-51d5-4133-bc27-8f1a84bd179b.m4a.json"
+}
+
+
+###
+POST http://localhost:8080/download
+Content-Type: application/json
+
+{
+    "download_url": "http://kneecap.2wu.me/media/transcripts/34a0b595-0d03-4401-9f43-52cbf1e7804d.mp3.json"
+}
+
+###
+GET http://localhost:8080/jobs/e3c713a4-7929-41c1-929c-c3a6866b0645
+
+
+###
+GET http://localhost:8080/jobs/5cd6bcea-cee3-472f-8e4a-40c2c90a4072

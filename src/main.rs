@@ -32,7 +32,7 @@ async fn main() -> std::io::Result<()> {
     log::info!("Serving files from: {}", media_path);
     log::info!("Max concurrent downloads: {}", max_concurrent_downloads);
 
-    // Create app state with worker
+    // Create app state with worker and start the worker
     let app_state = stowage::create_app_state(
         PathBuf::from(&media_path),
         db_pool.clone(),
@@ -40,14 +40,12 @@ async fn main() -> std::io::Result<()> {
     ).await;
 
     // Start the HTTP server
-    let server = HttpServer::new(move || {
+    HttpServer::new(move || {
         App::new()
             .app_data(web::Data::new(app_state.clone()))
             .configure(config)
     })
     .bind((host, port))?
-    .run();
-
-    // Wait for server to finish
-    server.await
+    .run()
+    .await
 }

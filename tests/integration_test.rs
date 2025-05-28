@@ -405,8 +405,102 @@ async fn test_download_job_creation() {
     let status_body: serde_json::Value = test::read_body_json(status_resp).await;
     assert_eq!(status_body["job_id"], body.job_id);
     assert_eq!(status_body["status"], "NotStarted");
+    assert_eq!(status_body["download_url"], test_url);
     assert_eq!(status_body["file_id"], serde_json::Value::Null);
 }
+
+// #[actix_web::test]
+// async fn test_download_and_poll_until_complete() {
+//     init_test_logger();
+//     let media_path = tempfile::tempdir().unwrap();
+//     let db_file = tempfile::NamedTempFile::new().unwrap();
+//     let manager = r2d2_sqlite::SqliteConnectionManager::file(db_file.path());
+//     let db_pool = r2d2::Pool::new(manager).unwrap();
+    
+//     // Initialize the database
+//     {
+//         let conn = db_pool.get().unwrap();
+//         stowage::db_utils::init_db(&conn).unwrap();
+//     }
+    
+// let state = stowage::create_app_state(
+//     media_path.path().to_path_buf(),
+//     db_pool.clone(),
+//     5, // max_concurrent_downloads
+// ).await;
+
+// let app = test::init_service(
+//     App::new()
+//         .app_data(actix_web::web::Data::new(state))
+//         .configure(stowage::routes),
+// )
+// .await;
+//     // Test data - using the specified URL
+//     let test_url = "http://kneecap.2wu.me/media/transcripts/052ef596-51d5-4133-bc27-8f1a84bd179b.m4a.json";
+    
+//     // 1. Make a request to create a download job
+//     let req = test::TestRequest::post()
+//         .uri("/download")
+//         .set_json(&json!({ "download_url": test_url }))
+//         .to_request();
+//     let resp = test::call_service(&app, req).await;
+    
+//     // Verify the response
+//     assert_eq!(resp.status(), StatusCode::ACCEPTED);
+//     let body: serde_json::Value = test::read_body_json(resp).await;
+//     let job_id = body["job_id"].as_str().expect("Job ID should be a string");
+//     let status_url = body["status_url"].as_str().expect("Status URL should be a string");
+    
+//     assert!(!job_id.is_empty());
+//     assert!(status_url.ends_with(&format!("/jobs/{}", job_id)));
+    
+//     // 2. Poll the status until completion or timeout
+//     let max_attempts = 60; // 60 seconds max
+//     let mut attempts = 0;
+//     let mut completed = false;
+    
+//     while attempts < max_attempts && !completed {
+//         attempts += 1;
+        
+//         // Get job status
+//         let status_req = test::TestRequest::get()
+//             .uri(status_url)
+//             .to_request();
+//         let status_resp = test::call_service(&app, status_req).await;
+//         assert_eq!(status_resp.status(), StatusCode::OK);
+        
+//         let status_body: serde_json::Value = test::read_body_json(status_resp).await;
+//         let status = status_body["status"].as_str().expect("Status should be a string");
+        
+//         match status {
+//             "Completed" => {
+//                 completed = true;
+//                 // Verify the file_id is present
+//                 assert_ne!(status_body["file_id"], serde_json::Value::Null, "File ID should be set for completed job");
+                
+//                 // Optional: Download the file and verify it's not empty
+//                 let file_id = status_body["file_id"].as_str().expect("File ID should be a string");
+//                 let download_req = test::TestRequest::get()
+//                     .uri(&format!("/files/{}", file_id))
+//                     .to_request();
+//                 let download_resp = test::call_service(&app, download_req).await;
+//                 assert_eq!(download_resp.status(), StatusCode::OK);
+                
+//                 let file_content = test::read_body(download_resp).await;
+//                 assert!(!file_content.is_empty(), "Downloaded file should not be empty");
+//             },
+//             "Failed" => {
+//                 panic!("Download job failed: {:?}", status_body["error"]);
+//             },
+//             _ => {
+//                 // Still in progress, wait a bit before polling again
+//                 std::thread::sleep(std::time::Duration::from_secs(1));
+//             }
+//         }
+//     }
+    
+//     assert!(completed, "Download did not complete within {} seconds", max_attempts);
+// }
 
 #[actix_web::test]
 async fn test_about_route() {
