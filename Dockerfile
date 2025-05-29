@@ -11,13 +11,11 @@ COPY . .
 RUN apt-get update && \
     apt-get install -y musl-tools musl-dev pkg-config libssl-dev
 
-# Set env for static OpenSSL
-ENV OPENSSL_STATIC=1
-ENV OPENSSL_NO_VENDOR=0
 
-RUN rustup target add x86_64-unknown-linux-musl
-RUN cargo test --release
-RUN cargo build --release --target x86_64-unknown-linux-musl
+# Use cross for musl builds (handles OpenSSL and cross-compilation automatically)
+RUN cargo install cross
+RUN cross test --release --target x86_64-unknown-linux-musl
+RUN cross build --release --target x86_64-unknown-linux-musl
 
 FROM debian:bullseye
 RUN apt-get update && \
