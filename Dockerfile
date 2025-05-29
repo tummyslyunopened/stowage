@@ -8,9 +8,10 @@ WORKDIR /app
 COPY . .
 
 
+
 # Install build dependencies for musl and OpenSSL
 RUN apt-get update && \
-    apt-get install -y musl-tools musl-dev pkg-config libssl-dev perl
+    apt-get install -y musl-tools musl-dev pkg-config libssl-dev perl make
 
 RUN rustup target add x86_64-unknown-linux-musl
 RUN cargo test --release
