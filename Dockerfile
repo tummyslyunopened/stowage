@@ -7,15 +7,14 @@ RUN cargo --version
 WORKDIR /app
 COPY . .
 
+
 # Install build dependencies for musl and OpenSSL
 RUN apt-get update && \
-    apt-get install -y musl-tools musl-dev pkg-config libssl-dev
+    apt-get install -y musl-tools musl-dev pkg-config libssl-dev perl
 
-
-# Use cross for musl builds (handles OpenSSL and cross-compilation automatically)
-RUN cargo install cross
-RUN cross test --release --target x86_64-unknown-linux-musl
-RUN cross build --release --target x86_64-unknown-linux-musl
+RUN rustup target add x86_64-unknown-linux-musl
+RUN cargo test --release
+RUN cargo build --release --target x86_64-unknown-linux-musl
 
 FROM debian:bullseye
 RUN apt-get update && \
