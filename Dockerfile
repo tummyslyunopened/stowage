@@ -24,9 +24,12 @@ RUN apt-get update && \
 WORKDIR /app
 COPY --from=builder /app/target/x86_64-unknown-linux-musl/release/stowage .
 RUN mkdir -p /app/media
+
 ENV RUST_LOG=info
 ENV MEDIA_PATH=${MEDIA_PATH:-/app/media}
+ENV DB_PATH=${DB_PATH:-/db/stowage.db}
 ENV HOST=0.0.0.0
 ENV PORT=8080
+
 EXPOSE 8080
 CMD ["./stowage"]
