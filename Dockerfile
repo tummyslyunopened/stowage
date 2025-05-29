@@ -1,6 +1,8 @@
 
-FROM rust:1.77 as builder
-RUN rustup update stable && rustup self update
+
+FROM rust:slim as builder
+RUN rustup update stable && rustup default stable && rustup self update && rustup component add cargo
+RUN cargo --version
 
 WORKDIR /app
 COPY . .
